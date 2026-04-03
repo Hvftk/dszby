@@ -1,1 +1,5 @@
+CCTV5,http://183.223.157.33:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 
+东方卫视,http://171.213.203.106:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+山东卫视,http://171.213.203.106:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
+浙江卫视,http://171.213.203.106:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
