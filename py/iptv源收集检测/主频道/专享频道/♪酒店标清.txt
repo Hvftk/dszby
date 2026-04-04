@@ -1,5 +1,7 @@
-CCTV5,http://171.213.203.106:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV4,http://171.213.203.106:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV7,http://171.213.203.106:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
 
-东方卫视,http://171.213.203.106:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
-浙江卫视,http://171.213.203.106:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
+山东卫视,http://171.213.203.106:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
+江苏卫视,http://183.223.157.33:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+湖北卫视,http://171.213.203.106:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
 峨眉电影,http://183.223.157.33:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
