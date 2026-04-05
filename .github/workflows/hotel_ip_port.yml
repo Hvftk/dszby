@@ -3,7 +3,7 @@ name: hotel IP and Port
 on:
   schedule:
     # 每隔天下午3点自动运行（UTC时间，北京时间+8）
-    - cron: '0 12,22 * * *'
+    - cron: '0 10,22 * * *'
   # push:
   #   # 当脚本文件有更新时触发
   #   paths:
