@@ -1,31 +1,11 @@
 ip_version_priority = "ipv6"
 
 source_urls = [
-    #"https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
     "https://raw.githubusercontent.com/adminouyang/231006/refs/heads/main/tvbox/%E7%9B%B4%E6%92%AD%E6%BA%90/live.txt",
-    "酒店组播",
     "https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt",
     "https://raw.githubusercontent.com/mhy700207/iptv/refs/heads/main/mhy1.m3u",
-    "https://raw.githubusercontent.com/zwc456baby/iptv_alive/refs/heads/master/live.txt",
     "https://raw.githubusercontent.com/qingtingjjjjjjj/iptv-auto-update/refs/heads/main/my.txt",
-    "http://aktv.top/live.m3u",
-     "https://raw.githubusercontent.com/yuanzl77/IPTV/main/直播/央视频道.txt",
-    "https://raw.githubusercontent.com/frxz751113/IPTVzb1/refs/heads/main/%E7%BB%BC%E5%90%88%E6%BA%90.txt",
-    # "https://live.zhoujie218.top/tv/iptv6.txt",
-    #"https://tv.youdu.fan:666/live/",
-     #"http://ww.weidonglong.com/dsj.txt",
-    # "http://xhztv.top/zbc.txt",
-    "http://kxrj.site:55/lib/kx2024.txt",
-    # "",
-    # "",
-    # "http://home.jundie.top:81/Cat/tv/live.txt",
-    #"https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt",
-    # "",
-    # "",
-    #"",
-   # "",
-    #"",
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt"
+
 ]
 
 url_blacklist = [
