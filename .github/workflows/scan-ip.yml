@@ -10,15 +10,15 @@ on:
         default: ''
         options:
           - ''
-          - 广东电信
-          - 广东移动
-          - 广东联通
-          - 北京电信
-          - 北京移动
-          - 北京联通
-          - 上海电信
-          - 上海移动
-          - 上海联通
+          # - 广东电信
+          # - 广东移动
+          # - 广东联通
+          # - 北京电信
+          # - 北京移动
+          # - 北京联通
+          # - 上海电信
+          # - 上海移动
+          # - 上海联通
   schedule:
     # 每天凌晨2点运行（UTC时间，北京时间10点）
     - cron: '0 2 * * *'
@@ -520,7 +520,7 @@ jobs:
         fi
         
     - name: 上传扫描结果作为Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ip-scan-results
         path: Hotel/ip/results/
