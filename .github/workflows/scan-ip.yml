@@ -35,7 +35,7 @@ jobs:
         
     - name: 扫描hotel ip
       run: |
-        cat > hotel IP Scanner.py << 'EOF'
+        cat > hotel_IP_Scanner.py << 'EOF'
         import os
         import time
         import requests
