@@ -1,0 +1,400 @@
+import os
+import time
+import requests
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from queue import Queue
+import argparse
+from typing import List, Tuple
+import sys
+
+# 添加代理设置（如果需要的话）
+# 取消注释以下行以设置代理
+# proxies = {
+#     'http': 'http://127.0.0.1:7890',
+#     'https': 'http://127.0.0.1:7890'
+# }
+proxies = None
+
+def expand_part(part: str) -> List[str]:
+    """扩展单个部分，支持范围和单个值"""
+    if '-' in part:
+        start, end = part.split('-')
+        return [str(i) for i in range(int(start), int(end) + 1)]
+    else:
+        return [part]
+
+def expand_ip_range(ip_str: str) -> List[str]:
+    """扩展IP范围，返回IP列表"""
+    ip_list = []
+    
+    # 分割IP的四个部分
+    parts = ip_str.split('.')
+    if len(parts) != 4:
+        return [ip_str]
+    
+    # 扩展每个部分
+    a_list = expand_part(parts[0])
+    b_list = expand_part(parts[1])
+    c_list = expand_part(parts[2])
+    d_list = expand_part(parts[3])
+    
+    # 生成所有IP组合
+    for a in a_list:
+        for b in b_list:
+            for c in c_list:
+                for d in d_list:
+                    ip_list.append(f"{a}.{b}.{c}.{d}")
+    
+    return ip_list
+
+def generate_ip_ports(ip: str, port: str, option: int) -> List[str]:
+    """根据选项生成要扫描的IP地址列表"""
+    a, b, c, d = ip.split('.')
+    
+    # 获取option的个位数，用于判断扫描范围
+    option_mod = option % 10
+    
+    if option_mod == 0:  # 扫描D段1-255
+        # 固定A、B、C段，扫描D段1-255
+        return [f"{a}.{b}.{c}.{y}:{port}" for y in range(1, 256)]
+        
+    elif option_mod == 2:  # 扫描C段
+        # 获取C段范围
+        c_range = c
+        if '-' in c_range:
+            c_start, c_end = map(int, c_range.split('-'))
+        else:
+            c_start = int(c_range)
+            c_end = c_start
+        
+        # 对于每个C段，扫描D段1-255
+        ip_ports = []
+        for x in range(c_start, c_end + 1):
+            for y in range(1, 256):
+                ip_ports.append(f"{a}.{b}.{x}.{y}:{port}")
+        return ip_ports
+        
+    elif option_mod == 1:  # 扫描B段
+        # 获取B段范围
+        b_range = b
+        if '-' in b_range:
+            b_start, b_end = map(int, b_range.split('-'))
+        else:
+            b_start = int(b_range)
+            b_end = b_start
+        
+        # 对于每个B段，扫描C段0-255，D段1-255
+        ip_ports = []
+        for b_val in range(b_start, b_end + 1):
+            for c_val in range(256):
+                for d_val in range(1, 256):
+                    ip_ports.append(f"{a}.{b_val}.{c_val}.{d_val}:{port}")
+        return ip_ports
+    
+    else:  # 默认使用option=0的逻辑
+        return [f"{a}.{b}.{c}.{y}:{port}" for y in range(1, 256)]
+
+def check_ip_port(ip_port: str, url_end: str, timeout: int = 2) -> str:
+    """发送get请求检测url是否可访问"""
+    try:
+        url = f"http://{ip_port}{url_end}"
+        resp = requests.get(url, timeout=timeout, proxies=proxies)
+        resp.raise_for_status()
+        if "tsfile" in resp.text or "hls" in resp.text:
+            print(f"✓ {url} 访问成功")
+            return ip_port
+    except Exception as e:
+        return None
+    return None
+
+def check_with_url_ends(ip_port: str, url_ends: List[str], timeout: int = 2) -> bool:
+    """用多个URL端点检查IP端口"""
+    for url_end in url_ends:
+        try:
+            url = f"http://{ip_port}{url_end}"
+            resp = requests.get(url, timeout=timeout, proxies=proxies)
+            if resp.status_code == 200:
+                print(f"✓ 二次验证成功: {url}")
+                return True
+        except:
+            continue
+    return False
+
+def scan_ip_port(ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> List[str]:
+    """扫描IP端口"""
+    valid_ip_ports = []
+    ip_ports = generate_ip_ports(ip, port, option)
+    total = len(ip_ports)
+    
+    print(f"开始扫描: {ip}:{port}, option={option}, 总IP数: {total}")
+    
+    # 根据option设置线程数
+    max_workers = 300 if option % 2 == 1 else 100
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(check_ip_port, ip_port, url_end): ip_port for ip_port in ip_ports}
+        
+        for i, future in enumerate(as_completed(futures), 1):
+            result = future.result()
+            if result:
+                valid_ip_ports.append(result)
+            
+            # 更新进度
+            if progress_queue and i % 100 == 0:
+                progress_queue.put((i, total))
+    
+    return valid_ip_ports
+
+def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
+    """读取配置文件，返回配置行列表和原始行列表"""
+    print(f"读取设置文件：{config_file}")
+    ip_configs = []
+    original_lines = []
+    
+    try:
+        with open(config_file, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            
+        for line_num, line in enumerate(lines, 1):
+            original_line = line.rstrip('\n')
+            original_lines.append(original_line)
+            line = line.strip()
+            
+            if not line or line.startswith("#"):
+                continue
+                
+            try:
+                if "," in line:
+                    parts = line.split(',')
+                    ip_part_port = parts[0].strip()
+                    option = int(parts[1].strip())
+                else:
+                    ip_part_port = line.strip()
+                    option = 12
+                
+                if ":" not in ip_part_port:
+                    print(f"第{line_num}行格式错误: 缺少端口号 - {line}")
+                    continue
+                    
+                # 分离IP和端口
+                ip_part, port = ip_part_port.split(':')
+                
+                # 检查是否是带范围的IP
+                if '-' in ip_part:
+                    # 扩展带范围的IP
+                    expanded_ips = expand_ip_range(ip_part)
+                    print(f"  第{line_num}行IP扩展: {ip_part} -> {len(expanded_ips)} 个IP")
+                    
+                    # 为每个扩展的IP创建配置
+                    for expanded_ip in expanded_ips:
+                        ip_parts = expanded_ip.split('.')
+                        a, b, c, d = ip_parts
+                        url_end = "/status" if option >= 10 else "/stat"
+                        # 注意：这里不再修改base_ip，因为generate_ip_ports函数会处理option
+                        base_ip = f"{a}.{b}.{c}.{d}"  # 使用完整的IP
+                        
+                        ip_configs.append((base_ip, port, option, url_end, line_num-1, f"{expanded_ip}:{port},{option}" if "," in line else f"{expanded_ip}:{port}"))
+                else:
+                    # 原来的逻辑，处理普通IP
+                    ip_parts = ip_part.split('.')
+                    if len(ip_parts) != 4:
+                        print(f"第{line_num}行格式错误: IP地址格式不正确 - {line}")
+                        continue
+                    
+                    a, b, c, d = ip_parts
+                    url_end = "/status" if option >= 10 else "/stat"
+                    # 注意：这里不再修改base_ip，因为generate_ip_ports函数会处理option
+                    base_ip = f"{a}.{b}.{c}.{d}"  # 使用完整的IP
+                    
+                    ip_configs.append((base_ip, port, option, url_end, line_num-1, original_line))
+                    
+            except Exception as e:
+                print(f"第{line_num}行格式错误: {e} - {line}")
+                continue
+                
+        return ip_configs, original_lines
+    except Exception as e:
+        print(f"读取文件错误: {e}")
+        return [], []
+
+def progress_monitor(progress_queue: Queue, total_configs: int):
+    """进度监视器"""
+    config_count = 0
+    while True:
+        try:
+            item = progress_queue.get(timeout=300)  # 5分钟超时
+            if item is None:  # 结束信号
+                break
+            
+            if isinstance(item, tuple) and len(item) == 2:
+                current, total = item
+                print(f"进度: {current}/{total} ({current/total*100:.1f}%)")
+            elif item == "CONFIG_COMPLETE":
+                config_count += 1
+                print(f"配置 {config_count}/{total_configs} 扫描完成")
+        except:
+            break
+
+def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
+    """扫描单个IP文件"""
+    # 获取文件名
+    filename = os.path.basename(input_file)
+    output_file = os.path.join(output_dir, filename)
+    
+    # 读取配置
+    ip_configs, original_lines = read_config(input_file)
+    
+    if not ip_configs:
+        print(f"文件中没有有效的配置: {input_file}")
+        return []
+    
+    print(f"找到 {len(ip_configs)} 个IP配置")
+    
+    # 创建进度队列
+    progress_queue = Queue()
+    
+    # 启动进度监视器
+    progress_thread = threading.Thread(target=progress_monitor, args=(progress_queue, len(ip_configs)))
+    progress_thread.daemon = True
+    progress_thread.start()
+    
+    all_valid_ips = []
+    
+    # 二次验证的URL端点
+    url_ends = ["/iptv/live/1000.json?key=txiptv", "/ZHGXTV/Public/json/live_interface.txt"]
+    
+    # 扫描每个配置
+    for i, (base_ip, port, option, url_end, line_num, original_line) in enumerate(ip_configs, 1):
+        print(f"\n处理配置 {i}/{len(ip_configs)}: {original_line}")
+        print(f"  option={option}, 扫描范围: ", end="")
+        
+        # 解释option的含义
+        option_mod = option % 10
+        if option_mod == 0:
+            print("D段1-255")
+        elif option_mod == 1:
+            print("B段0-255.1-255")
+        elif option_mod == 2:
+            print("C段1-255")
+        else:
+            print(f"未知选项: {option_mod}")
+        
+        # 扫描IP端口
+        valid_ips = scan_ip_port(base_ip, port, option, url_end, progress_queue)
+        
+        if valid_ips:
+            print(f"找到 {len(valid_ips)} 个有效IP")
+            
+            # 二次验证
+            print("开始二次验证...")
+            final_valid_ips = []
+            
+            with ThreadPoolExecutor(max_workers=50) as executor:
+                futures = {}
+                for ip_port in valid_ips:
+                    future = executor.submit(check_with_url_ends, ip_port, url_ends)
+                    futures[future] = ip_port
+                
+                for future in as_completed(futures):
+                    if future.result():
+                        final_valid_ips.append(futures[future])
+            
+            print(f"二次验证后剩余 {len(final_valid_ips)} 个IP")
+            all_valid_ips.extend(final_valid_ips)
+        
+        # 发送配置完成信号
+        progress_queue.put("CONFIG_COMPLETE")
+    
+    # 发送结束信号
+    progress_queue.put(None)
+    progress_thread.join(timeout=10)
+    
+    # 去重并保存结果
+    if all_valid_ips:
+        unique_ips = list(set(all_valid_ips))
+        print(f"\n扫描完成! 共找到 {len(unique_ips)} 个唯一有效IP")
+        
+        # 确保输出目录存在
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # 保存到文件
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for ip in unique_ips:
+                f.write(f"{ip}\n")
+        
+        print(f"结果已保存到: {output_file}")
+    else:
+        print("\n没有找到有效IP")
+    
+    return all_valid_ips
+
+def scan_all_files(input_dir: str = "Hotel/ip/ip", output_dir: str = "Hotel/ip/results"):
+    """扫描指定目录下的所有IP文件"""
+    # 确保目录存在
+    if not os.path.exists(input_dir):
+        print(f"输入目录不存在: {input_dir}")
+        return {}
+    
+    # 获取所有txt文件
+    ip_files = [f for f in os.listdir(input_dir) if f.endswith('.txt')]
+    
+    if not ip_files:
+        print(f"在目录 {input_dir} 中没有找到txt文件")
+        return {}
+    
+    print(f"找到 {len(ip_files)} 个IP文件")
+    
+    all_results = {}
+    
+    for ip_file in ip_files:
+        print(f"\n{'='*60}")
+        print(f"处理文件: {ip_file}")
+        print('='*60)
+        
+        input_file = os.path.join(input_dir, ip_file)
+        valid_ips = scan_single_file(input_file, output_dir)
+        
+        if valid_ips:
+            all_results[ip_file] = valid_ips
+        
+        time.sleep(1)  # 避免请求过于频繁
+    
+    return all_results
+
+def main():
+    """主函数"""
+    parser = argparse.ArgumentParser(description='IP扫描工具')
+    parser.add_argument('--file', type=str, help='指定单个IP文件进行扫描')
+    parser.add_argument('--dir', type=str, default='Hotel/ip/ip', help='IP文件目录，默认为 Hotel/ip/ip')
+    parser.add_argument('--output', type=str, default='Hotel/ip/results', help='输出目录，默认为 Hotel/ip/results')
+    parser.add_argument('--region', type=str, default='', help='指定地区文件（不带扩展名）')
+    
+    args = parser.parse_args()
+    
+    # 设置requests超时和重试
+    import requests.adapters
+    requests.adapters.DEFAULT_RETRIES = 2
+    
+    if args.region:
+        # 扫描指定地区
+        input_file = os.path.join(args.dir, f"{args.region}.txt")
+        if os.path.exists(input_file):
+            print(f"扫描指定地区: {args.region}")
+            scan_single_file(input_file, args.output)
+        else:
+            print(f"地区文件不存在: {input_file}")
+            # 尝试扫描所有文件
+            scan_all_files(args.dir, args.output)
+    elif args.file:
+        # 扫描单个文件
+        if os.path.exists(args.file):
+            scan_single_file(args.file, args.output)
+        else:
+            print(f"文件不存在: {args.file}")
+    else:
+        # 扫描目录下所有文件
+        scan_all_files(args.dir, args.output)
+
+if __name__ == "__main__":
+    main()
