@@ -435,7 +435,7 @@ jobs:
             main()
         EOF
         
-        python hotel_ip_port.py
+        python hotel_IP_Scanner.py
       
     - name: Commit and push if changes
       run: |
