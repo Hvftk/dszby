@@ -1,46 +1,63 @@
-name: hotel IP Scanner
+name: scan-ip
 
 on:
+  workflow_dispatch:  # 手动触发
   schedule:
-    # 每隔天下午3点自动运行（UTC时间，北京时间+8）
-    - cron: '0 10,22 * * *'
-  # push:
-  #   # 当脚本文件有更新时触发
-  #   paths:
-  #     - 'hotel_ip_port.yml'
-  # pull_request:
-  #   paths:
-  #     - 'hotel_ip_port.yml'
-  # 支持手动触发
-  workflow_dispatch:
+    # 每天凌晨2点运行（UTC时间，北京时间10点）
+    - cron: '0 2 * * *'
 
 jobs:
-  hotel-ip:
+  scan-ip:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - name: 检出代码
+      uses: actions/checkout@v3
       
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-        cache: 'pip'
         
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
+    - name: 安装依赖
+      run: pip install requests
         
-    - name: 扫描hotel ip
+    - name: 创建目录结构
       run: |
-        python hotel_IP_Scanner.py
-      
-    - name: Commit and push if changes
+        mkdir -p Hotel/ip/ip
+        mkdir -p Hotel/ip/results
+        
+        # 创建示例IP文件
+        echo "# IP扫描配置文件" > Hotel/ip/ip/示例.txt
+        echo "# 格式: IP:端口,option" >> Hotel/ip/ip/示例.txt
+        echo "# option说明:" >> Hotel/ip/ip/示例.txt
+        echo "# 0,10: 扫描D段1-255" >> Hotel/ip/ip/示例.txt
+        echo "# 2,12: 扫描C段" >> Hotel/ip/ip/示例.txt
+        echo "# 1,11: 扫描B段" >> Hotel/ip/ip/示例.txt
+        echo "" >> Hotel/ip/ip/示例.txt
+        echo "# 示例配置" >> Hotel/ip/ip/示例.txt
+        echo "120.202.94.181:9446,0   # 扫描D段: 120.202.94.1-255" >> Hotel/ip/ip/示例.txt
+        echo "120.202.94.181:9446,2   # 扫描C段: 120.202.94.1-255" >> Hotel/ip/ip/示例.txt
+        echo "120.202.94.181:9446,1   # 扫描B段: 120.202.0-255.1-255" >> Hotel/ip/ip/示例.txt
+        echo "120.202.94-102.1-255:9446,2   # 扫描多个C段" >> Hotel/ip/ip/示例.txt
+        echo "120.202-222.94-102.1-255:9446,1   # 扫描多个B段" >> Hotel/ip/ip/示例.txt
+        
+    - name: 运行IP扫描
+      run: python Hotel/scan_ip.py
+        
+    - name: 查看扫描结果
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add Hotel/ip/results
-        git diff --quiet && git diff --staged --quiet || git commit -m "扫描更新 hotel IP $(date '+%Y-%m-%d %H:%M:%S')"
-        git push
+        echo "扫描结果:"
+        if [ -d "Hotel/ip/results" ]; then
+          ls -la Hotel/ip/results/
+        else
+          echo "没有结果目录"
+        fi
+        
+    - name: 上传扫描结果
+      uses: actions/upload-artifact@v3
+      with:
+        name: ip-scan-results
+        path: Hotel/ip/results/
+        if-no-files-found: warn
