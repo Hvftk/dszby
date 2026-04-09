@@ -29,25 +29,10 @@ jobs:
     - name: 运行IP扫描
       run: python Hotel/scan_ip.py
         
-    - name: 查看扫描结果
+    - name: Commit and push changes
       run: |
-        echo "扫描结果:"
-        ls -la Hotel/ip/ 2>/dev/null || echo "没有找到结果目录"
-        if [ -d "Hotel/ip" ]; then
-          for file in Hotel/ip/*.txt 2>/dev/null; do
-            if [ -f "$file" ]; then
-              echo "=== $(basename "$file") ==="
-              head -5 "$file"
-              echo "..."
-              wc -l "$file"
-              echo ""
-            fi
-          done
-        fi
-        
-    - name: 上传扫描结果
-      uses: actions/upload-artifact@v4
-      with:
-        name: ip-scan-results
-        path: Hotel/ip
-        if-no-files-found: warn
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "更新扫描ip"
+          git push --force origin main 
