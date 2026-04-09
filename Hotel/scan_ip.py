@@ -368,7 +368,7 @@ def save_requests_log(requests_info: List[dict], output_file: str):
             
             f.write(f"{timestamp},{ip_port},{success},{valid_url},{status_code},{response_time},{channel_count},{url_type},{failure_reason}\n")
 
-def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
+def scan_single_file(input_file: str, output_dir: str = "Hotel/ip"):
     """扫描单个IP文件"""
     # 获取文件名
     filename = os.path.basename(input_file)
@@ -467,7 +467,7 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
     
     return all_valid_ips
 
-def scan_all_files(input_dir: str = "Hotel/ip/ip", output_dir: str = "Hotel/ip/results"):
+def scan_all_files(input_dir: str = "Hotel/ip/ip", output_dir: str = "Hotel/ip"):
     """扫描指定目录下的所有IP文件"""
     # 确保目录存在
     if not os.path.exists(input_dir):
@@ -505,7 +505,7 @@ def main():
     parser = argparse.ArgumentParser(description='IP扫描工具')
     parser.add_argument('--file', type=str, help='指定单个IP文件进行扫描')
     parser.add_argument('--dir', type=str, default='Hotel/ip/ip', help='IP文件目录，默认为 Hotel/ip/ip')
-    parser.add_argument('--output', type=str, default='Hotel/ip/results', help='输出目录，默认为 Hotel/ip/results')
+    parser.add_argument('--output', type=str, default='Hotel/ip', help='输出目录，默认为 Hotel/ip')
     parser.add_argument('--region', type=str, default='', help='指定地区文件（不带扩展名）')
     parser.add_argument('--timeout', type=int, default=3, help='请求超时时间（秒），默认为3秒')
     
