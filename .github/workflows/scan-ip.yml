@@ -25,23 +25,6 @@ jobs:
         
     - name: 创建目录结构
       run: |
-        mkdir -p Hotel/ip/ip
-        mkdir -p Hotel/ip/results
-        
-        # 创建示例IP文件
-        echo "# IP扫描配置文件" > Hotel/ip/ip/示例.txt
-        echo "# 格式: IP:端口,option" >> Hotel/ip/ip/示例.txt
-        echo "# option说明:" >> Hotel/ip/ip/示例.txt
-        echo "# 0,10: 扫描D段1-255" >> Hotel/ip/ip/示例.txt
-        echo "# 2,12: 扫描C段" >> Hotel/ip/ip/示例.txt
-        echo "# 1,11: 扫描B段" >> Hotel/ip/ip/示例.txt
-        echo "" >> Hotel/ip/ip/示例.txt
-        echo "# 示例配置" >> Hotel/ip/ip/示例.txt
-        echo "120.202.94.181:9446,0   # 扫描D段: 120.202.94.1-255" >> Hotel/ip/ip/示例.txt
-        echo "120.202.94.181:9446,2   # 扫描C段: 120.202.94.1-255" >> Hotel/ip/ip/示例.txt
-        echo "120.202.94.181:9446,1   # 扫描B段: 120.202.0-255.1-255" >> Hotel/ip/ip/示例.txt
-        echo "120.202.94-102.1-255:9446,2   # 扫描多个C段" >> Hotel/ip/ip/示例.txt
-        echo "120.202-222.94-102.1-255:9446,1   # 扫描多个B段" >> Hotel/ip/ip/示例.txt
         
     - name: 运行IP扫描
       run: python Hotel/scan_ip.py
@@ -49,15 +32,22 @@ jobs:
     - name: 查看扫描结果
       run: |
         echo "扫描结果:"
-        if [ -d "Hotel/ip/results" ]; then
-          ls -la Hotel/ip/results/
-        else
-          echo "没有结果目录"
+        ls -la Hotel/ip/ 2>/dev/null || echo "没有找到结果目录"
+        if [ -d "Hotel/ip" ]; then
+          for file in Hotel/ip/*.txt 2>/dev/null; do
+            if [ -f "$file" ]; then
+              echo "=== $(basename "$file") ==="
+              head -5 "$file"
+              echo "..."
+              wc -l "$file"
+              echo ""
+            fi
+          done
         fi
         
     - name: 上传扫描结果
       uses: actions/upload-artifact@v4
       with:
         name: ip-scan-results
-        path: Hotel/ip/results/
+        path: Hotel/ip
         if-no-files-found: warn
