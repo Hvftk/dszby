@@ -7,6 +7,7 @@ from queue import Queue
 import argparse
 from typing import List, Tuple
 import sys
+from datetime import datetime
 
 # 添加代理设置（如果需要的话）
 # 取消注释以下行以设置代理
@@ -108,35 +109,99 @@ def generate_ip_ports(base_ip: str, port: str, option: int) -> List[str]:
     else:  # 默认使用option=0的逻辑
         return [f"{a}.{b}.{c}.{y}:{port}" for y in range(1, 256)]
 
-def check_ip_port(ip_port: str, url_end: str, timeout: int = 2) -> str:
-    """发送get请求检测url是否可访问"""
+def check_ip_port(ip_port: str, url_end: str, timeout: int = 2) -> Tuple[str, dict]:
+    """发送get请求检测url是否可访问，返回详细请求信息"""
     try:
         url = f"http://{ip_port}{url_end}"
+        start_time = time.time()
         resp = requests.get(url, timeout=timeout, proxies=proxies)
+        end_time = time.time()
+        resp_time = end_time - start_time
+        
         resp.raise_for_status()
         if "tsfile" in resp.text or "hls" in resp.text:
-            print(f"✓ {url} 访问成功")
-            return ip_port
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ {url} 访问成功 (响应时间: {resp_time:.2f}s, 状态码: {resp.status_code})")
+            return ip_port, {
+                'url': url,
+                'status_code': resp.status_code,
+                'response_time': resp_time,
+                'success': True,
+                'timestamp': datetime.now().isoformat()
+            }
+        else:
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 无有效内容 (响应时间: {resp_time:.2f}s, 状态码: {resp.status_code})")
+            return None, {
+                'url': url,
+                'status_code': resp.status_code,
+                'response_time': resp_time,
+                'success': False,
+                'timestamp': datetime.now().isoformat(),
+                'reason': '无tsfile或hls内容'
+            }
+    except requests.exceptions.Timeout:
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求超时")
+        return None, {
+            'url': url,
+            'status_code': None,
+            'response_time': None,
+            'success': False,
+            'timestamp': datetime.now().isoformat(),
+            'reason': '请求超时'
+        }
+    except requests.exceptions.ConnectionError:
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 连接失败")
+        return None, {
+            'url': url,
+            'status_code': None,
+            'response_time': None,
+            'success': False,
+            'timestamp': datetime.now().isoformat(),
+            'reason': '连接失败'
+        }
     except Exception as e:
-        return None
-    return None
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求异常: {str(e)}")
+        return None, {
+            'url': url,
+            'status_code': None,
+            'response_time': None,
+            'success': False,
+            'timestamp': datetime.now().isoformat(),
+            'reason': f'请求异常: {str(e)}'
+        }
 
-def check_with_url_ends(ip_port: str, url_ends: List[str], timeout: int = 2) -> bool:
-    """用多个URL端点检查IP端口"""
+def check_with_url_ends(ip_port: str, url_ends: List[str], timeout: int = 2) -> Tuple[bool, dict]:
+    """用多个URL端点检查IP端口，返回详细请求信息"""
+    best_response = None
+    best_status = False
+    
     for url_end in url_ends:
         try:
             url = f"http://{ip_port}{url_end}"
+            start_time = time.time()
             resp = requests.get(url, timeout=timeout, proxies=proxies)
+            end_time = time.time()
+            resp_time = end_time - start_time
+            
             if resp.status_code == 200:
-                print(f"✓ 二次验证成功: {url}")
-                return True
-        except:
-            continue
-    return False
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ 二次验证成功: {url} (响应时间: {resp_time:.2f}s)")
+                return True, {
+                    'url': url,
+                    'status_code': resp.status_code,
+                    'response_time': resp_time,
+                    'success': True,
+                    'timestamp': datetime.now().isoformat()
+                }
+            else:
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ 二次验证失败: {url} (状态码: {resp.status_code}, 响应时间: {resp_time:.2f}s)")
+        except Exception as e:
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ 二次验证异常: {url} - {str(e)}")
+    
+    return False, best_response
 
-def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> List[str]:
-    """扫描IP端口"""
+def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> Tuple[List[str], List[dict]]:
+    """扫描IP端口，返回有效IP列表和所有请求信息"""
     valid_ip_ports = []
+    all_requests_info = []
     ip_ports = generate_ip_ports(base_ip, port, option)
     total = len(ip_ports)
     
@@ -149,7 +214,12 @@ def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_qu
         futures = {executor.submit(check_ip_port, ip_port, url_end): ip_port for ip_port in ip_ports}
         
         for i, future in enumerate(as_completed(futures), 1):
-            result = future.result()
+            ip_port = futures[future]
+            result, request_info = future.result()
+            
+            # 保存请求信息
+            all_requests_info.append(request_info)
+            
             if result:
                 valid_ip_ports.append(result)
             
@@ -157,7 +227,7 @@ def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_qu
             if progress_queue and i % 100 == 0:
                 progress_queue.put((i, total))
     
-    return valid_ip_ports
+    return valid_ip_ports, all_requests_info
 
 def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
     """读取配置文件，返回配置行列表和原始行列表"""
@@ -184,7 +254,7 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                     option = int(parts[1].strip())
                 else:
                     ip_part_port = line.strip()
-                    option = 12
+                    option = 0  # 修改：默认值为0而不是12
                 
                 if ":" not in ip_part_port:
                     print(f"第{line_num}行格式错误: 缺少端口号 - {line}")
@@ -206,7 +276,13 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                         url_end = "/status" if option >= 10 else "/stat"
                         base_ip = f"{a}.{b}.{c}.{d}"
                         
-                        ip_configs.append((base_ip, port, option, url_end, line_num-1, f"{expanded_ip}:{port},{option}" if "," in line else f"{expanded_ip}:{port}"))
+                        # 保存原始行（如果有option就包含，没有就不包含）
+                        if "," in original_line:
+                            original_for_ip = f"{expanded_ip}:{port},{option}"
+                        else:
+                            original_for_ip = f"{expanded_ip}:{port}"
+                        
+                        ip_configs.append((base_ip, port, option, url_end, line_num-1, original_for_ip))
                 else:
                     # 原来的逻辑，处理普通IP
                     ip_parts = ip_part.split('.')
@@ -247,11 +323,32 @@ def progress_monitor(progress_queue: Queue, total_configs: int):
         except:
             break
 
+def save_requests_log(requests_info: List[dict], output_file: str):
+    """保存请求日志到文件"""
+    if not requests_info:
+        return
+    
+    # 确保目录存在
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write("请求时间,URL,状态码,响应时间(秒),是否成功,失败原因\n")
+        for req in requests_info:
+            timestamp = req.get('timestamp', '')
+            url = req.get('url', '')
+            status_code = req.get('status_code', '')
+            response_time = req.get('response_time', '')
+            success = req.get('success', False)
+            reason = req.get('reason', '')
+            
+            f.write(f"{timestamp},{url},{status_code},{response_time},{success},{reason}\n")
+
 def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
     """扫描单个IP文件"""
     # 获取文件名
     filename = os.path.basename(input_file)
     output_file = os.path.join(output_dir, filename)
+    log_file = os.path.join(output_dir, f"{os.path.splitext(filename)[0]}_requests.log")
     
     # 读取配置
     ip_configs, original_lines = read_config(input_file)
@@ -271,13 +368,15 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
     progress_thread.start()
     
     all_valid_ips = []
+    all_requests_info = []
     
     # 二次验证的URL端点
     url_ends = ["/iptv/live/1000.json?key=txiptv", "/ZHGXTV/Public/json/live_interface.txt"]
     
     # 扫描每个配置
     for i, (base_ip, port, option, url_end, line_num, original_line) in enumerate(ip_configs, 1):
-        print(f"\n处理配置 {i}/{len(ip_configs)}: {original_line}")
+        print(f"\n{'='*60}")
+        print(f"处理配置 {i}/{len(ip_configs)}: {original_line}")
         print(f"  option={option}, 扫描范围: ", end="")
         
         # 解释option的含义
@@ -296,7 +395,8 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
         print(f"  预估扫描IP数: {len(ip_ports)}")
         
         # 扫描IP端口
-        valid_ips = scan_ip_port(base_ip, port, option, url_end, progress_queue)
+        valid_ips, requests_info = scan_ip_port(base_ip, port, option, url_end, progress_queue)
+        all_requests_info.extend(requests_info)
         
         if valid_ips:
             print(f"找到 {len(valid_ips)} 个有效IP")
@@ -304,6 +404,7 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
             # 二次验证
             print("开始二次验证...")
             final_valid_ips = []
+            second_stage_info = []
             
             with ThreadPoolExecutor(max_workers=50) as executor:
                 futures = {}
@@ -312,9 +413,14 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
                     futures[future] = ip_port
                 
                 for future in as_completed(futures):
-                    if future.result():
-                        final_valid_ips.append(futures[future])
+                    ip_port = futures[future]
+                    result, request_info = future.result()
+                    if request_info:
+                        second_stage_info.append(request_info)
+                    if result:
+                        final_valid_ips.append(ip_port)
             
+            all_requests_info.extend(second_stage_info)
             print(f"二次验证后剩余 {len(final_valid_ips)} 个IP")
             all_valid_ips.extend(final_valid_ips)
         
@@ -333,12 +439,22 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
         # 确保输出目录存在
         os.makedirs(output_dir, exist_ok=True)
         
-        # 保存到文件
+        # 保存有效IP到文件
         with open(output_file, 'w', encoding='utf-8') as f:
             for ip in unique_ips:
                 f.write(f"{ip}\n")
         
         print(f"结果已保存到: {output_file}")
+        
+        # 保存请求日志
+        save_requests_log(all_requests_info, log_file)
+        print(f"请求日志已保存到: {log_file}")
+        
+        # 打印摘要统计
+        print(f"\n扫描统计:")
+        print(f"  总请求数: {len(all_requests_info)}")
+        print(f"  成功请求数: {sum(1 for req in all_requests_info if req.get('success'))}")
+        print(f"  失败请求数: {sum(1 for req in all_requests_info if not req.get('success'))}")
     else:
         print("\n没有找到有效IP")
     
@@ -384,12 +500,18 @@ def main():
     parser.add_argument('--dir', type=str, default='Hotel/ip/ip', help='IP文件目录，默认为 Hotel/ip/ip')
     parser.add_argument('--output', type=str, default='Hotel/ip/results', help='输出目录，默认为 Hotel/ip/results')
     parser.add_argument('--region', type=str, default='', help='指定地区文件（不带扩展名）')
+    parser.add_argument('--verbose', '-v', action='store_true', help='显示详细日志')
     
     args = parser.parse_args()
     
     # 设置requests超时和重试
     import requests.adapters
     requests.adapters.DEFAULT_RETRIES = 2
+    
+    # 打印开始时间
+    start_time = time.time()
+    print(f"开始时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print('='*60)
     
     if args.region:
         # 扫描指定地区
@@ -410,6 +532,13 @@ def main():
     else:
         # 扫描目录下所有文件
         scan_all_files(args.dir, args.output)
+    
+    # 打印结束时间和总耗时
+    end_time = time.time()
+    print(f"\n{'='*60}")
+    print(f"结束时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"总耗时: {end_time - start_time:.2f}秒")
+    print('='*60)
 
 if __name__ == "__main__":
     main()
