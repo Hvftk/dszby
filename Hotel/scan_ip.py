@@ -8,6 +8,7 @@ import argparse
 from typing import List, Tuple
 import sys
 from datetime import datetime
+import json
 
 # 添加代理设置（如果需要的话）
 # 取消注释以下行以设置代理
@@ -109,96 +110,102 @@ def generate_ip_ports(base_ip: str, port: str, option: int) -> List[str]:
     else:  # 默认使用option=0的逻辑
         return [f"{a}.{b}.{c}.{y}:{port}" for y in range(1, 256)]
 
-def check_ip_port(ip_port: str, url_end: str, timeout: int = 2) -> Tuple[str, dict]:
-    """发送get请求检测url是否可访问，返回详细请求信息"""
-    try:
-        url = f"http://{ip_port}{url_end}"
-        start_time = time.time()
-        resp = requests.get(url, timeout=timeout, proxies=proxies)
-        end_time = time.time()
-        resp_time = end_time - start_time
-        
-        resp.raise_for_status()
-        if "tsfile" in resp.text or "hls" in resp.text:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ {url} 访问成功 (响应时间: {resp_time:.2f}s, 状态码: {resp.status_code})")
-            return ip_port, {
-                'url': url,
-                'status_code': resp.status_code,
-                'response_time': resp_time,
-                'success': True,
-                'timestamp': datetime.now().isoformat()
-            }
-        else:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 无有效内容 (响应时间: {resp_time:.2f}s, 状态码: {resp.status_code})")
-            return None, {
-                'url': url,
-                'status_code': resp.status_code,
-                'response_time': resp_time,
-                'success': False,
-                'timestamp': datetime.now().isoformat(),
-                'reason': '无tsfile或hls内容'
-            }
-    except requests.exceptions.Timeout:
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求超时")
-        return None, {
-            'url': url,
-            'status_code': None,
-            'response_time': None,
-            'success': False,
-            'timestamp': datetime.now().isoformat(),
-            'reason': '请求超时'
-        }
-    except requests.exceptions.ConnectionError:
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 连接失败")
-        return None, {
-            'url': url,
-            'status_code': None,
-            'response_time': None,
-            'success': False,
-            'timestamp': datetime.now().isoformat(),
-            'reason': '连接失败'
-        }
-    except Exception as e:
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求异常: {str(e)}")
-        return None, {
-            'url': url,
-            'status_code': None,
-            'response_time': None,
-            'success': False,
-            'timestamp': datetime.now().isoformat(),
-            'reason': f'请求异常: {str(e)}'
-        }
-
-def check_with_url_ends(ip_port: str, url_ends: List[str], timeout: int = 2) -> Tuple[bool, dict]:
-    """用多个URL端点检查IP端口，返回详细请求信息"""
-    best_response = None
-    best_status = False
+def check_channel_urls(ip_port: str, timeout: int = 3) -> Tuple[bool, str, dict]:
+    """检查IP端口的两个频道URL，返回是否有效、有效URL和请求信息"""
+    # 两个要检查的URL端点
+    urls_to_check = [
+        f"http://{ip_port}/iptv/live/1000.json?key=txiptv",
+        f"http://{ip_port}/ZHGXTV/Public/json/live_interface.txt"
+    ]
     
-    for url_end in url_ends:
+    request_info = {
+        'ip_port': ip_port,
+        'success': False,
+        'valid_url': '',
+        'timestamp': datetime.now().isoformat()
+    }
+    
+    for url in urls_to_check:
         try:
-            url = f"http://{ip_port}{url_end}"
             start_time = time.time()
             resp = requests.get(url, timeout=timeout, proxies=proxies)
             end_time = time.time()
             resp_time = end_time - start_time
             
             if resp.status_code == 200:
-                print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ 二次验证成功: {url} (响应时间: {resp_time:.2f}s)")
-                return True, {
-                    'url': url,
-                    'status_code': resp.status_code,
-                    'response_time': resp_time,
-                    'success': True,
-                    'timestamp': datetime.now().isoformat()
-                }
-            else:
-                print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ 二次验证失败: {url} (状态码: {resp.status_code}, 响应时间: {resp_time:.2f}s)")
+                # 检查响应内容是否有效
+                content = resp.text
+                
+                # 尝试解析JSON（有些响应可能被XML包裹）
+                if '<?xml' in content:
+                    # 提取JSON部分
+                    json_start = content.find('{')
+                    json_end = content.rfind('}') + 1
+                    if json_start != -1 and json_end != 0:
+                        json_content = content[json_start:json_end]
+                        try:
+                            data = json.loads(json_content)
+                            if 'data' in data and isinstance(data['data'], list):
+                                print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ {url} 访问成功 (响应时间: {resp_time:.2f}s, 频道数: {len(data['data'])})")
+                                request_info.update({
+                                    'success': True,
+                                    'valid_url': url,
+                                    'status_code': resp.status_code,
+                                    'response_time': resp_time,
+                                    'channel_count': len(data['data']),
+                                    'url_type': 'xml_wrapped_json'
+                                })
+                                return True, url, request_info
+                        except json.JSONDecodeError:
+                            pass
+                else:
+                    # 直接解析JSON
+                    try:
+                        data = resp.json()
+                        if 'data' in data and isinstance(data['data'], list):
+                            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ {url} 访问成功 (响应时间: {resp_time:.2f}s, 频道数: {len(data['data'])})")
+                            request_info.update({
+                                'success': True,
+                                'valid_url': url,
+                                'status_code': resp.status_code,
+                                'response_time': resp_time,
+                                'channel_count': len(data['data']),
+                                'url_type': 'direct_json'
+                            })
+                            return True, url, request_info
+                    except json.JSONDecodeError:
+                        # 如果不是JSON，检查是否包含频道信息
+                        if 'tsfile' in content or 'm3u8' in content or 'channel' in content.lower():
+                            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✓ {url} 访问成功 (响应时间: {resp_time:.2f}s, 包含频道信息)")
+                            request_info.update({
+                                'success': True,
+                                'valid_url': url,
+                                'status_code': resp.status_code,
+                                'response_time': resp_time,
+                                'channel_count': 0,
+                                'url_type': 'contains_channels'
+                            })
+                            return True, url, request_info
+            
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求失败 (状态码: {resp.status_code}, 响应时间: {resp_time:.2f}s)")
+            request_info.update({
+                'last_status_code': resp.status_code,
+                'last_response_time': resp_time
+            })
+            
+        except requests.exceptions.Timeout:
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求超时")
+            request_info['timeout_url'] = url
+        except requests.exceptions.ConnectionError:
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 连接失败")
+            request_info['connection_error_url'] = url
         except Exception as e:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ 二次验证异常: {url} - {str(e)}")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ✗ {url} 请求异常: {str(e)[:50]}")
+            request_info['exception'] = str(e)[:50]
     
-    return False, best_response
+    return False, '', request_info
 
-def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> Tuple[List[str], List[dict]]:
+def scan_ip_port(base_ip: str, port: str, option: int, progress_queue: Queue = None) -> Tuple[List[str], List[dict]]:
     """扫描IP端口，返回有效IP列表和所有请求信息"""
     valid_ip_ports = []
     all_requests_info = []
@@ -206,22 +213,24 @@ def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_qu
     total = len(ip_ports)
     
     print(f"开始扫描: {base_ip}:{port}, option={option}, 总IP数: {total}")
+    print(f"验证URL: http://IP:端口/iptv/live/1000.json?key=txiptv")
+    print(f"备用URL: http://IP:端口/ZHGXTV/Public/json/live_interface.txt")
     
     # 根据option设置线程数
     max_workers = 300 if option % 2 == 1 else 100
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(check_ip_port, ip_port, url_end): ip_port for ip_port in ip_ports}
+        futures = {executor.submit(check_channel_urls, ip_port): ip_port for ip_port in ip_ports}
         
         for i, future in enumerate(as_completed(futures), 1):
             ip_port = futures[future]
-            result, request_info = future.result()
+            result, valid_url, request_info = future.result()
             
             # 保存请求信息
             all_requests_info.append(request_info)
             
             if result:
-                valid_ip_ports.append(result)
+                valid_ip_ports.append(ip_port)
             
             # 更新进度
             if progress_queue and i % 100 == 0:
@@ -254,10 +263,15 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                     option = int(parts[1].strip())
                 else:
                     ip_part_port = line.strip()
-                    option = 0  # 修改：默认值为0而不是12
+                    option = 0  # 修改：默认值为0
                 
                 if ":" not in ip_part_port:
                     print(f"第{line_num}行格式错误: 缺少端口号 - {line}")
+                    continue
+                
+                # 检查IP部分是否为空
+                if not ip_part_port.split(':')[0]:
+                    print(f"第{line_num}行格式错误: IP地址为空 - {line}")
                     continue
                     
                 # 分离IP和端口
@@ -273,7 +287,6 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                     for expanded_ip in expanded_ips:
                         ip_parts = expanded_ip.split('.')
                         a, b, c, d = ip_parts
-                        url_end = "/status" if option >= 10 else "/stat"
                         base_ip = f"{a}.{b}.{c}.{d}"
                         
                         # 保存原始行（如果有option就包含，没有就不包含）
@@ -282,7 +295,7 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                         else:
                             original_for_ip = f"{expanded_ip}:{port}"
                         
-                        ip_configs.append((base_ip, port, option, url_end, line_num-1, original_for_ip))
+                        ip_configs.append((base_ip, port, option, line_num-1, original_for_ip))
                 else:
                     # 原来的逻辑，处理普通IP
                     ip_parts = ip_part.split('.')
@@ -291,10 +304,9 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                         continue
                     
                     a, b, c, d = ip_parts
-                    url_end = "/status" if option >= 10 else "/stat"
                     base_ip = f"{a}.{b}.{c}.{d}"
                     
-                    ip_configs.append((base_ip, port, option, url_end, line_num-1, original_line))
+                    ip_configs.append((base_ip, port, option, line_num-1, original_line))
                     
             except Exception as e:
                 print(f"第{line_num}行格式错误: {e} - {line}")
@@ -332,16 +344,29 @@ def save_requests_log(requests_info: List[dict], output_file: str):
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write("请求时间,URL,状态码,响应时间(秒),是否成功,失败原因\n")
+        f.write("请求时间,IP:端口,是否成功,有效URL,状态码,响应时间(秒),频道数,URL类型,失败原因\n")
         for req in requests_info:
             timestamp = req.get('timestamp', '')
-            url = req.get('url', '')
-            status_code = req.get('status_code', '')
-            response_time = req.get('response_time', '')
+            ip_port = req.get('ip_port', '')
             success = req.get('success', False)
-            reason = req.get('reason', '')
+            valid_url = req.get('valid_url', '')
+            status_code = req.get('status_code', req.get('last_status_code', ''))
+            response_time = req.get('response_time', req.get('last_response_time', ''))
+            channel_count = req.get('channel_count', 0)
+            url_type = req.get('url_type', '')
             
-            f.write(f"{timestamp},{url},{status_code},{response_time},{success},{reason}\n")
+            # 失败原因
+            failure_reason = ''
+            if 'timeout_url' in req:
+                failure_reason = f"超时: {req['timeout_url']}"
+            elif 'connection_error_url' in req:
+                failure_reason = f"连接失败: {req['connection_error_url']}"
+            elif 'exception' in req:
+                failure_reason = f"异常: {req['exception']}"
+            elif not success and status_code:
+                failure_reason = f"状态码: {status_code}"
+            
+            f.write(f"{timestamp},{ip_port},{success},{valid_url},{status_code},{response_time},{channel_count},{url_type},{failure_reason}\n")
 
 def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
     """扫描单个IP文件"""
@@ -370,11 +395,8 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
     all_valid_ips = []
     all_requests_info = []
     
-    # 二次验证的URL端点
-    url_ends = ["/iptv/live/1000.json?key=txiptv", "/ZHGXTV/Public/json/live_interface.txt"]
-    
     # 扫描每个配置
-    for i, (base_ip, port, option, url_end, line_num, original_line) in enumerate(ip_configs, 1):
+    for i, (base_ip, port, option, line_num, original_line) in enumerate(ip_configs, 1):
         print(f"\n{'='*60}")
         print(f"处理配置 {i}/{len(ip_configs)}: {original_line}")
         print(f"  option={option}, 扫描范围: ", end="")
@@ -393,36 +415,15 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
         # 计算总IP数用于预估
         ip_ports = generate_ip_ports(base_ip, port, option)
         print(f"  预估扫描IP数: {len(ip_ports)}")
+        print(f"  验证顺序: 先尝试 /iptv/live/1000.json?key=txiptv，失败则尝试 /ZHGXTV/Public/json/live_interface.txt")
         
         # 扫描IP端口
-        valid_ips, requests_info = scan_ip_port(base_ip, port, option, url_end, progress_queue)
+        valid_ips, requests_info = scan_ip_port(base_ip, port, option, progress_queue)
         all_requests_info.extend(requests_info)
         
         if valid_ips:
             print(f"找到 {len(valid_ips)} 个有效IP")
-            
-            # 二次验证
-            print("开始二次验证...")
-            final_valid_ips = []
-            second_stage_info = []
-            
-            with ThreadPoolExecutor(max_workers=50) as executor:
-                futures = {}
-                for ip_port in valid_ips:
-                    future = executor.submit(check_with_url_ends, ip_port, url_ends)
-                    futures[future] = ip_port
-                
-                for future in as_completed(futures):
-                    ip_port = futures[future]
-                    result, request_info = future.result()
-                    if request_info:
-                        second_stage_info.append(request_info)
-                    if result:
-                        final_valid_ips.append(ip_port)
-            
-            all_requests_info.extend(second_stage_info)
-            print(f"二次验证后剩余 {len(final_valid_ips)} 个IP")
-            all_valid_ips.extend(final_valid_ips)
+            all_valid_ips.extend(valid_ips)
         
         # 发送配置完成信号
         progress_queue.put("CONFIG_COMPLETE")
@@ -455,6 +456,12 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
         print(f"  总请求数: {len(all_requests_info)}")
         print(f"  成功请求数: {sum(1 for req in all_requests_info if req.get('success'))}")
         print(f"  失败请求数: {sum(1 for req in all_requests_info if not req.get('success'))}")
+        
+        # 显示前5个有效IP
+        if unique_ips:
+            print(f"\n前5个有效IP:")
+            for ip in unique_ips[:5]:
+                print(f"  {ip}")
     else:
         print("\n没有找到有效IP")
     
@@ -500,7 +507,7 @@ def main():
     parser.add_argument('--dir', type=str, default='Hotel/ip/ip', help='IP文件目录，默认为 Hotel/ip/ip')
     parser.add_argument('--output', type=str, default='Hotel/ip/results', help='输出目录，默认为 Hotel/ip/results')
     parser.add_argument('--region', type=str, default='', help='指定地区文件（不带扩展名）')
-    parser.add_argument('--verbose', '-v', action='store_true', help='显示详细日志')
+    parser.add_argument('--timeout', type=int, default=3, help='请求超时时间（秒），默认为3秒')
     
     args = parser.parse_args()
     
