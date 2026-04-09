@@ -48,48 +48,61 @@ def expand_ip_range(ip_str: str) -> List[str]:
     
     return ip_list
 
-def generate_ip_ports(ip: str, port: str, option: int) -> List[str]:
+def generate_ip_ports(base_ip: str, port: str, option: int) -> List[str]:
     """根据选项生成要扫描的IP地址列表"""
-    a, b, c, d = ip.split('.')
+    a, b, c, d = base_ip.split('.')
     
     # 获取option的个位数，用于判断扫描范围
     option_mod = option % 10
     
     if option_mod == 0:  # 扫描D段1-255
-        # 固定A、B、C段，扫描D段1-255
+        # 示例: 120.202.94.181:9446,0 -> 扫描 120.202.94.1-255:9446
         return [f"{a}.{b}.{c}.{y}:{port}" for y in range(1, 256)]
         
-    elif option_mod == 2:  # 扫描C段
-        # 获取C段范围
-        c_range = c
-        if '-' in c_range:
-            c_start, c_end = map(int, c_range.split('-'))
-        else:
-            c_start = int(c_range)
-            c_end = c_start
-        
-        # 对于每个C段，扫描D段1-255
+    elif option_mod == 2:  # 扫描C段和D段
+        # 示例: 120.202.94.181:9446,2 -> 扫描 120.202.94.1-255:9446
+        # 示例: 120.202.94-102.1-255:9446,2 -> 扫描 120.202.94-102.1-255:9446
         ip_ports = []
-        for x in range(c_start, c_end + 1):
-            for y in range(1, 256):
-                ip_ports.append(f"{a}.{b}.{x}.{y}:{port}")
+        
+        # 处理B段
+        b_list = expand_part(b)
+        
+        for b_val in b_list:
+            # 处理C段
+            c_list = expand_part(c)
+            
+            for c_val in c_list:
+                # 处理D段
+                d_list = expand_part(d)
+                
+                for d_val in d_list:
+                    if d_val == '0':  # 跳过D段为0的情况
+                        continue
+                    ip_ports.append(f"{a}.{b_val}.{c_val}.{d_val}:{port}")
+        
         return ip_ports
         
-    elif option_mod == 1:  # 扫描B段
-        # 获取B段范围
-        b_range = b
-        if '-' in b_range:
-            b_start, b_end = map(int, b_range.split('-'))
-        else:
-            b_start = int(b_range)
-            b_end = b_start
-        
-        # 对于每个B段，扫描C段0-255，D段1-255
+    elif option_mod == 1:  # 扫描B段、C段和D段
+        # 示例: 120.202.94.181:9446,1 -> 扫描 120.202.0-255.1-255:9446
+        # 示例: 120.202-222.94-102.1-255:9446,1 -> 扫描 120.202-222.94-102.1-255:9446
         ip_ports = []
-        for b_val in range(b_start, b_end + 1):
-            for c_val in range(256):
-                for d_val in range(1, 256):
+        
+        # 处理B段
+        b_list = expand_part(b)
+        
+        for b_val in b_list:
+            # 处理C段
+            c_list = expand_part(c)
+            
+            for c_val in c_list:
+                # 处理D段
+                d_list = expand_part(d)
+                
+                for d_val in d_list:
+                    if d_val == '0':  # 跳过D段为0的情况
+                        continue
                     ip_ports.append(f"{a}.{b_val}.{c_val}.{d_val}:{port}")
+        
         return ip_ports
     
     else:  # 默认使用option=0的逻辑
@@ -121,13 +134,13 @@ def check_with_url_ends(ip_port: str, url_ends: List[str], timeout: int = 2) -> 
             continue
     return False
 
-def scan_ip_port(ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> List[str]:
+def scan_ip_port(base_ip: str, port: str, option: int, url_end: str, progress_queue: Queue = None) -> List[str]:
     """扫描IP端口"""
     valid_ip_ports = []
-    ip_ports = generate_ip_ports(ip, port, option)
+    ip_ports = generate_ip_ports(base_ip, port, option)
     total = len(ip_ports)
     
-    print(f"开始扫描: {ip}:{port}, option={option}, 总IP数: {total}")
+    print(f"开始扫描: {base_ip}:{port}, option={option}, 总IP数: {total}")
     
     # 根据option设置线程数
     max_workers = 300 if option % 2 == 1 else 100
@@ -191,8 +204,7 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                         ip_parts = expanded_ip.split('.')
                         a, b, c, d = ip_parts
                         url_end = "/status" if option >= 10 else "/stat"
-                        # 注意：这里不再修改base_ip，因为generate_ip_ports函数会处理option
-                        base_ip = f"{a}.{b}.{c}.{d}"  # 使用完整的IP
+                        base_ip = f"{a}.{b}.{c}.{d}"
                         
                         ip_configs.append((base_ip, port, option, url_end, line_num-1, f"{expanded_ip}:{port},{option}" if "," in line else f"{expanded_ip}:{port}"))
                 else:
@@ -204,8 +216,7 @@ def read_config(config_file: str) -> Tuple[List[Tuple], List[str]]:
                     
                     a, b, c, d = ip_parts
                     url_end = "/status" if option >= 10 else "/stat"
-                    # 注意：这里不再修改base_ip，因为generate_ip_ports函数会处理option
-                    base_ip = f"{a}.{b}.{c}.{d}"  # 使用完整的IP
+                    base_ip = f"{a}.{b}.{c}.{d}"
                     
                     ip_configs.append((base_ip, port, option, url_end, line_num-1, original_line))
                     
@@ -272,13 +283,17 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip/results"):
         # 解释option的含义
         option_mod = option % 10
         if option_mod == 0:
-            print("D段1-255")
+            print(f"D段1-255 (基于 {base_ip})")
         elif option_mod == 1:
-            print("B段0-255.1-255")
+            print(f"B段、C段、D段 (基于 {base_ip})")
         elif option_mod == 2:
-            print("C段1-255")
+            print(f"C段、D段 (基于 {base_ip})")
         else:
             print(f"未知选项: {option_mod}")
+        
+        # 计算总IP数用于预估
+        ip_ports = generate_ip_ports(base_ip, port, option)
+        print(f"  预估扫描IP数: {len(ip_ports)}")
         
         # 扫描IP端口
         valid_ips = scan_ip_port(base_ip, port, option, url_end, progress_queue)
