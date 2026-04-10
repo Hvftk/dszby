@@ -298,7 +298,7 @@ def check_ip_with_timeout(ip_port, timeout=3):
             'error': str(e)
         }
 
-def scan_ips(ip_list, max_workers=20, verbose=True):
+def scan_ips(ip_list, max_workers=100, verbose=True):
     """
     并发扫描IP列表
     """
