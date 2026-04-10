@@ -373,7 +373,7 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip"):
     # 获取文件名
     filename = os.path.basename(input_file)
     output_file = os.path.join(output_dir, filename)
-    # log_file = os.path.join(output_dir, f"{os.path.splitext(filename)[0]}_requests.log")
+    log_file = os.path.join(output_dir, f"{os.path.splitext(filename)[0]}_requests.log")
     
     # 读取配置
     ip_configs, original_lines = read_config(input_file)
