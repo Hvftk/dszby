@@ -217,7 +217,7 @@ def scan_ip_port(base_ip: str, port: str, option: int, progress_queue: Queue = N
     print(f"备用URL: http://IP:端口/ZHGXTV/Public/json/live_interface.txt")
     
     # 根据option设置线程数
-    max_workers = 300 if option % 2 == 1 else 100
+    max_workers = 30 if option % 2 == 1 else 10
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {executor.submit(check_channel_urls, ip_port): ip_port for ip_port in ip_ports}
