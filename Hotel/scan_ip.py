@@ -448,8 +448,8 @@ def scan_single_file(input_file: str, output_dir: str = "Hotel/ip"):
         print(f"结果已保存到: {output_file}")
         
         # 保存请求日志
-        # save_requests_log(all_requests_info, log_file)
-        # print(f"请求日志已保存到: {log_file}")
+        save_requests_log(all_requests_info, log_file)
+        print(f"请求日志已保存到: {log_file}")
         
         # 打印摘要统计
         print(f"\n扫描统计:")
