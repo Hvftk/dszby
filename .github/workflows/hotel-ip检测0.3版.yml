@@ -1601,7 +1601,7 @@ jobs:
        
            try:
                with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
-                   update_time = datetime.now().strftime('%Y/%m/%d %H:%M')
+                   update_time = datetime.datetime.utcnow() + datetime.timedelta(hours=8).strftime('%Y/%m/%d %H:%M')  #datetime.now().strftime('%Y/%m/%d %H:%M')
                    f.write(f"{update_time},#genre#\n\n")
        
                    for category in sorted_categories:
