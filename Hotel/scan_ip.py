@@ -16,8 +16,11 @@ def parse_ip_line(line):
     格式: ip:port 或 ip:port,option
     """
     line = line.strip()
-    if not line:
+    if not line or line.startswith('#'):  # 跳过空行和注释
         return None
+    
+    # 移除可能的空白字符
+    line = line.replace(' ', '')
     
     parts = line.split(',')
     ip_port = parts[0]
@@ -25,6 +28,7 @@ def parse_ip_line(line):
     
     ip_port_parts = ip_port.split(':')
     if len(ip_port_parts) != 2:
+        print(f"    [!] 格式错误: {line} (应为IP:端口格式)")
         return None
     
     ip = ip_port_parts[0]
@@ -33,6 +37,27 @@ def parse_ip_line(line):
     # 验证IP格式
     ip_parts = ip.split('.')
     if len(ip_parts) != 4:
+        print(f"    [!] IP格式错误: {ip} (应为4段)")
+        return None
+    
+    # 验证每段是否为数字且在0-255之间
+    try:
+        for part in ip_parts:
+            if not 0 <= int(part) <= 255:
+                print(f"    [!] IP段超出范围: {part} (0-255之间)")
+                return None
+        
+        # 验证端口
+        if not 1 <= int(port) <= 65535:
+            print(f"    [!] 端口超出范围: {port} (1-65535之间)")
+            return None
+        
+        # 验证option
+        if option not in [0, 1, 2]:
+            print(f"    [!] 选项值无效: {option} (应为0,1,2)")
+            option = 0
+    except ValueError as e:
+        print(f"    [!] 数值格式错误: {line} - {e}")
         return None
     
     return {
@@ -74,7 +99,10 @@ def generate_ips(base_ip, port, option):
                 ip_list.append(f"{new_ip}:{port}")
     
     else:
-        print(f"    未知选项 {option}，跳过")
+        print(f"    未知选项 {option}，默认为0")
+        for i in range(1, 256):
+            new_ip = f"{a}.{b}.{c}.{i}"
+            ip_list.append(f"{new_ip}:{port}")
     
     return ip_list
 
@@ -90,7 +118,16 @@ def check_ip_with_timeout(ip_port, timeout=3):
         
         # 第一个测试URL
         test_url1 = urljoin(base_url, "/iptv/live/1000.json?key=txiptv")
-        response1 = requests.get(test_url1, timeout=timeout)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
+        
+        response1 = requests.get(test_url1, headers=headers, timeout=timeout, allow_redirects=False)
         
         if response1.status_code == 200:
             response_time = (time.time() - start_time) * 1000
@@ -99,12 +136,13 @@ def check_ip_with_timeout(ip_port, timeout=3):
                 'ip': ip_port,
                 'url': test_url1,
                 'response_time': response_time,
-                'source': '1000.json'
+                'source': '1000.json',
+                'status_code': response1.status_code
             }
         
         # 如果第一个URL没有响应，尝试第二个URL
         test_url2 = urljoin(base_url, "/ZHGXTV/Public/json/live_interface.txt")
-        response2 = requests.get(test_url2, timeout=timeout)
+        response2 = requests.get(test_url2, headers=headers, timeout=timeout, allow_redirects=False)
         
         if response2.status_code == 200:
             response_time = (time.time() - start_time) * 1000
@@ -113,11 +151,12 @@ def check_ip_with_timeout(ip_port, timeout=3):
                 'ip': ip_port,
                 'url': test_url2,
                 'response_time': response_time,
-                'source': 'live_interface.txt'
+                'source': 'live_interface.txt',
+                'status_code': response2.status_code
             }
         
         return {
-            'status': 'timeout',
+            'status': 'no_response',
             'ip': ip_port,
             'response_time': (time.time() - start_time) * 1000
         }
@@ -135,7 +174,7 @@ def check_ip_with_timeout(ip_port, timeout=3):
         }
     except requests.exceptions.RequestException as e:
         return {
-            'status': 'error',
+            'status': 'request_error',
             'ip': ip_port,
             'error': str(e)
         }
@@ -146,7 +185,7 @@ def check_ip_with_timeout(ip_port, timeout=3):
             'error': str(e)
         }
 
-def scan_ips(ip_list, max_workers=50, verbose=True):
+def scan_ips(ip_list, max_workers=20, verbose=True):
     """
     并发扫描IP列表
     """
@@ -154,10 +193,14 @@ def scan_ips(ip_list, max_workers=50, verbose=True):
     scan_stats = {
         'total': len(ip_list),
         'success': 0,
+        'no_response': 0,
         'timeout': 0,
         'connection_error': 0,
+        'request_error': 0,
         'other_error': 0
     }
+    
+    print(f"    开始扫描，使用 {max_workers} 个线程")
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         # 提交所有任务
@@ -176,88 +219,111 @@ def scan_ips(ip_list, max_workers=50, verbose=True):
                 result = future.result()
                 
                 # 更新统计
-                if result['status'] == 'success':
-                    scan_stats['success'] += 1
+                status = result['status']
+                scan_stats[status] += 1
+                
+                if status == 'success':
                     valid_ips.append({
                         'ip_port': result['ip'],
                         'response_time': result.get('response_time', 0),
-                        'source': result.get('source', 'unknown')
+                        'source': result.get('source', 'unknown'),
+                        'url': result.get('url', ''),
+                        'status_code': result.get('status_code', 0)
                     })
                     
                     if verbose:
-                        print(f"  [✓] {result['ip']} - 响应时间: {result.get('response_time', 0):.2f}ms - 来源: {result.get('source', 'unknown')}")
+                        print(f"    [✓] {result['ip']} - 响应: {result.get('response_time', 0):.0f}ms - 来源: {result.get('source', 'unknown')}")
                 
-                elif result['status'] == 'timeout':
-                    scan_stats['timeout'] += 1
-                    if verbose and completed % 100 == 0:  # 每100个超时打印一次
-                        print(f"  [×] {result['ip']} - 超时")
-                
-                elif result['status'] == 'connection_error':
-                    scan_stats['connection_error'] += 1
-                    if verbose and completed % 100 == 0:  # 每100个连接错误打印一次
-                        print(f"  [×] {result['ip']} - 连接错误")
-                
-                else:
-                    scan_stats['other_error'] += 1
-                
-                # 每100个IP打印一次进度
-                if completed % 100 == 0 and verbose:
+                # 每扫描100个IP打印一次进度
+                if verbose and completed % 100 == 0:
                     progress = (completed / len(ip_list)) * 100
-                    print(f"  进度: {completed}/{len(ip_list)} ({progress:.1f}%) - 成功: {scan_stats['success']} 超时: {scan_stats['timeout']} 连接错误: {scan_stats['connection_error']}")
+                    print(f"    进度: {completed}/{len(ip_list)} ({progress:.1f}%) - 成功: {scan_stats['success']} 无响应: {scan_stats['no_response']} 超时: {scan_stats['timeout']}")
                     
             except Exception as e:
                 scan_stats['other_error'] += 1
                 if verbose and completed % 100 == 0:
-                    print(f"  [!] {ip} - 扫描异常: {str(e)[:50]}")
+                    print(f"    [!] {ip} - 扫描异常: {str(e)[:50]}")
     
     return valid_ips, scan_stats
 
-def process_file(input_file_path, output_dir, max_workers=50, verbose=True):
+def process_file(input_file_path, output_dir, max_workers=20, verbose=True):
     """
     处理单个文件
     """
     print(f"\n{'='*60}")
-    print(f"处理文件: {input_file_path}")
+    print(f"处理文件: {os.path.basename(input_file_path)}")
+    print(f"文件路径: {input_file_path}")
     print(f"{'='*60}")
     
+    # 检查文件是否存在
+    if not os.path.exists(input_file_path):
+        print(f"  [!] 错误: 文件不存在")
+        return 0, 0, {}
+    
     all_ip_to_scan = []
+    original_ips = []
     
     # 读取文件并解析
-    with open(input_file_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        print(f"  读取到 {len(lines)} 行数据")
+    try:
+        with open(input_file_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            print(f"  文件读取成功，共 {len(lines)} 行")
+            
+            valid_lines = 0
+            for line_num, line in enumerate(lines, 1):
+                parsed = parse_ip_line(line)
+                if parsed:
+                    valid_lines += 1
+                    original_ips.append(f"{parsed['ip']}:{parsed['port']},option={parsed['option']}")
+                    print(f"    第{line_num}行: {parsed['ip']}:{parsed['port']}, 选项={parsed['option']}")
+                    
+                    # 生成要扫描的IP
+                    ips_to_scan = generate_ips(parsed['ip'], parsed['port'], parsed['option'])
+                    all_ip_to_scan.extend(ips_to_scan)
+                elif line.strip():  # 如果不是空行，打印警告
+                    print(f"    [!] 第{line_num}行解析失败: {line.strip()}")
         
-        valid_lines = 0
-        for line_num, line in enumerate(f, 1):
-            parsed = parse_ip_line(line)
-            if parsed:
-                valid_lines += 1
-                print(f"  第{line_num}行: {parsed['ip']}:{parsed['port']}, 选项={parsed['option']}")
-                
-                # 生成要扫描的IP
-                ips_to_scan = generate_ips(parsed['ip'], parsed['port'], parsed['option'])
-                all_ip_to_scan.extend(ips_to_scan)
-        
+        if valid_lines == 0:
+            print(f"  [!] 警告: 文件 {input_file_path} 中没有找到有效IP行")
+            print(f"  文件内容示例:")
+            if len(lines) > 0:
+                for i, line in enumerate(lines[:5]):  # 显示前5行
+                    print(f"    行{i+1}: {line.rstrip()}")
+            return 0, 0, {}
+            
         print(f"  有效行数: {valid_lines}")
+        print(f"  原始IP列表:")
+        for ip in original_ips[:10]:  # 只显示前10个原始IP
+            print(f"    - {ip}")
+        if len(original_ips) > 10:
+            print(f"    ... 还有 {len(original_ips) - 10} 个IP")
+        
+    except Exception as e:
+        print(f"  [!] 读取文件时出错: {e}")
+        return 0, 0, {}
     
     if not all_ip_to_scan:
-        print(f"  文件 {input_file_path} 没有找到有效的IP")
+        print(f"  [!] 警告: 没有生成要扫描的IP")
         return 0, 0, {}
     
     print(f"  总共生成 {len(all_ip_to_scan)} 个IP需要扫描")
     
     # 去重
+    unique_count_before = len(all_ip_to_scan)
     all_ip_to_scan = list(set(all_ip_to_scan))
-    print(f"  去重后 {len(all_ip_to_scan)} 个IP需要扫描")
+    unique_count_after = len(all_ip_to_scan)
+    print(f"  去重: {unique_count_before} -> {unique_count_after} (去重 {unique_count_before - unique_count_after} 个)")
     
     # 分批扫描，避免内存不足
-    batch_size = 10000
+    batch_size = 1000
     all_valid_ips = []
     total_stats = {
         'total': 0,
         'success': 0,
+        'no_response': 0,
         'timeout': 0,
         'connection_error': 0,
+        'request_error': 0,
         'other_error': 0
     }
     
@@ -268,7 +334,8 @@ def process_file(input_file_path, output_dir, max_workers=50, verbose=True):
         
         print(f"\n  {'-'*50}")
         print(f"  批次 {batch_num}/{total_batches}: {len(batch)} 个IP")
-        print(f"  批次IP范围: {batch[0]} 到 {batch[-1]}")
+        if len(batch) > 0:
+            print(f"  批次IP范围: {batch[0]} 到 {batch[-1]}")
         print(f"  {'-'*50}")
         
         batch_start_time = time.time()
@@ -283,17 +350,23 @@ def process_file(input_file_path, output_dir, max_workers=50, verbose=True):
         
         print(f"  {'-'*50}")
         print(f"  批次完成: 成功 {len(valid_ips)} 个IP")
-        print(f"  批次统计: 成功 {batch_stats['success']}, 超时 {batch_stats['timeout']}, 连接错误 {batch_stats['connection_error']}, 其他错误 {batch_stats.get('other_error', 0)}")
-        print(f"  批次耗时: {batch_time:.2f}秒, 平均每个IP: {batch_time/len(batch)*1000:.2f}毫秒")
+        print(f"  批次统计: 成功 {batch_stats['success']}, 无响应 {batch_stats['no_response']}, 超时 {batch_stats['timeout']}, 连接错误 {batch_stats['connection_error']}")
+        print(f"  批次耗时: {batch_time:.2f}秒, 平均每个IP: {batch_time/len(batch)*1000:.1f}毫秒")
     
     # 汇总统计
     print(f"\n{'='*60}")
     print(f"文件 {os.path.basename(input_file_path)} 扫描汇总:")
-    print(f"  扫描IP总数: {total_stats['total']}")
-    print(f"  成功IP数: {total_stats['success']} ({total_stats['success']/total_stats['total']*100:.2f}%)")
-    print(f"  超时IP数: {total_stats['timeout']} ({total_stats['timeout']/total_stats['total']*100:.2f}%)")
-    print(f"  连接错误: {total_stats['connection_error']} ({total_stats['connection_error']/total_stats['total']*100:.2f}%)")
-    print(f"  其他错误: {total_stats.get('other_error', 0)} ({total_stats.get('other_error', 0)/total_stats['total']*100:.2f}%)")
+    print(f"  原始IP行数: {valid_lines}")
+    print(f"  生成IP总数: {total_stats['total']}")
+    
+    if total_stats['total'] > 0:
+        print(f"  成功IP数: {total_stats['success']} ({total_stats['success']/total_stats['total']*100:.2f}%)")
+        print(f"  无响应IP数: {total_stats['no_response']} ({total_stats['no_response']/total_stats['total']*100:.2f}%)")
+        print(f"  超时IP数: {total_stats['timeout']} ({total_stats['timeout']/total_stats['total']*100:.2f}%)")
+        print(f"  连接错误: {total_stats['connection_error']} ({total_stats['connection_error']/total_stats['total']*100:.2f}%)")
+        print(f"  请求错误: {total_stats['request_error']} ({total_stats['request_error']/total_stats['total']*100:.2f}%)")
+    else:
+        print(f"  没有生成可扫描的IP")
     
     # 保存结果
     if all_valid_ips:
@@ -310,13 +383,13 @@ def process_file(input_file_path, output_dir, max_workers=50, verbose=True):
         # 打印前10个最快的IP
         print(f"\n  最快的前10个IP:")
         for i, ip_info in enumerate(sorted_ips[:10], 1):
-            print(f"    {i:2d}. {ip_info['ip_port']} - {ip_info['response_time']:.2f}ms (来源: {ip_info['source']})")
+            print(f"    {i:2d}. {ip_info['ip_port']} - {ip_info['response_time']:.0f}ms (来源: {ip_info['source']})")
         
         print(f"\n  保存 {len(all_valid_ips)} 个有效IP到: {output_file_path}")
     else:
-        print(f"\n  没有发现有效IP")
+        print(f"\n  [!] 没有发现有效IP")
     
-    return len(all_ip_to_scan), len(all_valid_ips), total_stats
+    return total_stats['total'], len(all_valid_ips), total_stats
 
 def main():
     # 设置路径
@@ -330,6 +403,10 @@ def main():
     # 检查输入目录是否存在
     if not os.path.exists(input_dir):
         print(f"错误: 输入目录不存在: {input_dir}")
+        print(f"尝试创建目录...")
+        os.makedirs(input_dir, exist_ok=True)
+        print(f"已创建目录: {input_dir}")
+        print(f"请将IP文件放入此目录，然后重新运行")
         return
     
     # 查找所有txt文件
@@ -340,13 +417,31 @@ def main():
     
     if not txt_files:
         print(f"在目录 {input_dir} 中没有找到txt文件")
+        print(f"目录内容: {os.listdir(input_dir)}")
+        
+        # 创建示例文件
+        example_file = os.path.join(input_dir, "example.txt")
+        with open(example_file, 'w', encoding='utf-8') as f:
+            f.write("# IP扫描文件示例\n")
+            f.write("# 格式: IP:端口,选项\n")
+            f.write("# 选项: 0=扫描D段, 1=扫描B/C/D段, 2=扫描C/D段\n")
+            f.write("# 示例:\n")
+            f.write("192.168.1.1:80,0\n")
+            f.write("10.0.0.1:8080,1\n")
+            f.write("172.16.0.1:443,2\n")
+        
+        print(f"已创建示例文件: {example_file}")
+        print(f"请编辑此文件添加您的IP，然后重新运行")
         return
     
     print(f"{'='*60}")
     print(f"开始IP扫描 - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"输入目录: {input_dir}")
     print(f"输出目录: {output_dir}")
-    print(f"找到 {len(txt_files)} 个txt文件")
+    print(f"找到 {len(txt_files)} 个txt文件:")
+    for i, file in enumerate(txt_files, 1):
+        file_size = os.path.getsize(file)
+        print(f"  {i}. {os.path.basename(file)} ({file_size} 字节)")
     print(f"{'='*60}")
     
     # 处理每个文件
@@ -379,13 +474,17 @@ def main():
     print(f"扫描完成 - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*60}")
     
-    print(f"\n文件扫描统计:")
-    for stat in file_stats:
-        success_rate = (stat['valid'] / stat['scanned'] * 100) if stat['scanned'] > 0 else 0
-        print(f"  {stat['file']}:")
-        print(f"    扫描IP数: {stat['scanned']}")
-        print(f"    有效IP数: {stat['valid']} ({success_rate:.2f}%)")
-        print(f"    扫描耗时: {stat['time']:.2f}秒")
+    if file_stats:
+        print(f"\n文件扫描统计:")
+        for stat in file_stats:
+            if stat['scanned'] > 0:
+                success_rate = (stat['valid'] / stat['scanned'] * 100) 
+                print(f"  {stat['file']}:")
+                print(f"    扫描IP数: {stat['scanned']}")
+                print(f"    有效IP数: {stat['valid']} ({success_rate:.2f}%)")
+                print(f"    扫描耗时: {stat['time']:.2f}秒")
+            else:
+                print(f"  {stat['file']}: 没有扫描任何IP")
     
     print(f"\n总体统计:")
     print(f"  总扫描IP数: {total_ips_scanned}")
@@ -405,11 +504,14 @@ def main():
         
         f.write(f"\n文件详情:\n")
         for stat in file_stats:
-            success_rate = (stat['valid'] / stat['scanned'] * 100) if stat['scanned'] > 0 else 0
-            f.write(f"  {stat['file']}:\n")
-            f.write(f"    扫描IP数: {stat['scanned']}\n")
-            f.write(f"    有效IP数: {stat['valid']} ({success_rate:.2f}%)\n")
-            f.write(f"    扫描耗时: {stat['time']:.2f}秒\n")
+            if stat['scanned'] > 0:
+                success_rate = (stat['valid'] / stat['scanned'] * 100) 
+                f.write(f"  {stat['file']}:\n")
+                f.write(f"    扫描IP数: {stat['scanned']}\n")
+                f.write(f"    有效IP数: {stat['valid']} ({success_rate:.2f}%)\n")
+                f.write(f"    扫描耗时: {stat['time']:.2f}秒\n")
+            else:
+                f.write(f"  {stat['file']}: 没有扫描任何IP\n")
     
     print(f"\n详细报告已保存到: {report_file}")
     print(f"{'='*60}")
