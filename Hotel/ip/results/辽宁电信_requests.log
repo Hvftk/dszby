@@ -1,0 +1,3 @@
+请求时间,IP:端口,是否成功,有效URL,状态码,响应时间(秒),频道数,URL类型,失败原因
+2026-04-10T01:55:23.549724,182.207.218.25:999,False,,,,0,,超时: http://182.207.218.25:999/ZHGXTV/Public/json/live_interface.txt
+2026-04-10T01:55:29.559210,42.84.213.168:777,True,http://42.84.213.168:777/ZHGXTV/Public/json/live_interface.txt,200,0.48961925506591797,0,contains_channels,
