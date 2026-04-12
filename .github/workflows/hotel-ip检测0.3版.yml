@@ -149,7 +149,7 @@ jobs:
             "广平新闻频道","漯河新闻综合","漯河文旅频道","爱大剧","河南移动电视"
         ],
         "河北频道": [
-             "河北影视剧", "河北都市","河北经济生活", "河北文旅公共", "河北少儿科教","河北三农","河北杂技","邯郸新闻综合","邯郸科技教育", "衡水新闻", "衡水公共","荆州新闻综合"，"魏县综合新闻",         
+             "河北影视剧", "河北都市","河北经济生活", "河北文旅公共", "河北少儿科教","河北三农","河北杂技","邯郸新闻综合","邯郸科技教育", "衡水新闻", "衡水公共","荆州新闻综合","魏县综合新闻",         
              "广平新闻频道",
         ],
         "山东频道": [
@@ -861,6 +861,47 @@ jobs:
                return False
        
        
+       def test_channel_url_availability(channel_url, timeout=2):
+           """快速测试单个频道链接的可用性（不测速，只检查是否可连接）"""
+           try:
+               # 发送HEAD请求，只获取头部信息，更轻量。如果HEAD不被支持，回退到GET。
+               try:
+                   resp = requests.head(channel_url, timeout=timeout, allow_redirects=True)
+                   # 有些服务器对HEAD请求返回405，如果遇到，则尝试GET
+                   if resp.status_code == 405:
+                       resp = requests.get(channel_url, timeout=timeout, stream=True)
+                       # 对于GET请求，我们只读取前几个字节确认可连接，然后立即关闭
+                       if resp.status_code == 200:
+                           # 读取少量数据以确保流是可读的，然后中断连接
+                           for chunk in resp.iter_content(chunk_size=1024):
+                               if chunk:
+                                   break
+               except requests.exceptions.ReadTimeout:
+                   # 对于流媒体，HEAD/GET可能挂起，用更短的超时尝试GET range请求
+                   try:
+                       # 尝试请求一个字节范围，这是检查流媒体可访问性的常用方法
+                       headers = {'Range': 'bytes=0-0'}
+                       resp = requests.get(channel_url, headers=headers, timeout=timeout)
+                   except:
+                       return False
+               except:
+                   # 其他错误（连接错误、超时等）直接尝试GET
+                   resp = requests.get(channel_url, timeout=timeout, stream=True)
+                   if resp.status_code == 200:
+                       for chunk in resp.iter_content(chunk_size=1024):
+                           if chunk:
+                               break
+       
+               # 判断请求是否成功 (2xx 状态码通常表示成功)
+               if 200 <= resp.status_code < 400:
+                   return True
+               else:
+                   return False
+           except Exception as e:
+               # 任何异常都视为链接不可用
+               return False
+       
+       
        def test_ip_availability(ip_port):
            """测试IP可用性，支持JSON和TXT两种格式"""
            try:
@@ -1552,7 +1593,7 @@ jobs:
        
        
        def collect_all_channels():
-           """收集所有IP文件中的频道信息"""
+           """收集所有IP文件中的频道信息 - 增加频道链接可用性检查"""
            all_channels = {}
            logo_dict = load_channel_logos()
        
@@ -1577,26 +1618,34 @@ jobs:
                                            logo = get_channel_logo(std_name, logo_dict)
        
                                            url = channel.get("url", "")
+                                           # 第一步：验证URL格式
                                            if url and validate_url_format(url, ip_port):
-                                               # 确保URL格式正确
-                                               play_url = url
+                                               # 第二步：验证URL可访问性
+                                               if test_channel_url_availability(url):
+                                                   # 确保URL格式正确
+                                                   play_url = url
        
-                                               channel_key = f"{std_name}|{play_url}"
-                                               if channel_key not in all_channels:
-                                                   all_channels[channel_key] = {
-                                                       "name": std_name,
-                                                       "url": play_url,
-                                                       "logo": logo,
-                                                       "category": category,
-                                                       "ip": ip_port,
-                                                       "speed": speed
-                                                   }
+                                                   channel_key = f"{std_name}|{play_url}"
+                                                   if channel_key not in all_channels:
+                                                       all_channels[channel_key] = {
+                                                           "name": std_name,
+                                                           "url": play_url,
+                                                           "logo": logo,
+                                                           "category": category,
+                                                           "ip": ip_port,
+                                                           "speed": speed
+                                                       }
+                                                   # 可选：打印成功信息
+                                                   # print(f"✅ 频道链接可用: {std_name}")
+                                               else:
+                                                   # 链接不可用，跳过
+                                                   print(f"🚫 频道链接不可用，已跳过: {std_name} -> {url}")
                                            else:
-                                               print(f"⚠️ 跳过无效URL的频道: {std_name} -> {url}")
+                                               print(f"⚠️ 跳过无效URL格式的频道: {std_name} -> {url}")
                            except Exception as e:
                                print(f"❌ 处理IP {ip_port} 的频道信息失败: {e}")
        
-           print(f"✅ 共收集到 {len(all_channels)} 个有效频道")
+           print(f"✅ 共收集到 {len(all_channels)} 个有效频道（已过滤不可用链接）")
            return all_channels
        
        
@@ -1757,6 +1806,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "更新酒店源ip"
+        git commit -m "更新酒店源ip，增加频道链接可用性检查"
         git push
-       
