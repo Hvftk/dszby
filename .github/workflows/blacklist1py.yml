@@ -1,8 +1,8 @@
 name: blacklist1.py
 
 on:
-  schedule:
-    - cron: '0 14 */3 * *'  # UTC
+  # schedule:
+  #   - cron: '0 14 */3 * *'  # UTC
   workflow_dispatch:
     inputs:
       environment:
