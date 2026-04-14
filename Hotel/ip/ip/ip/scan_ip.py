@@ -358,7 +358,7 @@ def main():
     output_dir = "Hotel/ip/"
     
     # 配置文件路径
-    config_file = "scan_config.txt"
+    config_file = "Hotel/ip/ip/ip/scan_config.txt"
     
     # 确保输出目录存在
     os.makedirs(output_dir, exist_ok=True)
@@ -397,9 +397,7 @@ def main():
         return
     
     print(f"开始IP扫描 - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"将处理 {len(txt_files)} 个txt文件")
-    for file in txt_files:
-        print(f"  - {os.path.basename(file)}")
+    print(f"找到 {len(txt_files)} 个txt文件")
     
     # 处理每个文件
     total_ips_scanned = 0
@@ -409,7 +407,7 @@ def main():
         print(f"\n[文件 {i}/{len(txt_files)}] {os.path.basename(txt_file)}")
         
         start_time = time.time()
-        ips_scanned, valid_ips, stats = process_file(txt_file, output_dir, args.workers)
+        ips_scanned, valid_ips, stats = process_file(txt_file, output_dir)
         scan_time = time.time() - start_time
         
         total_ips_scanned += ips_scanned
