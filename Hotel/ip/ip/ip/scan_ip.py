@@ -351,25 +351,8 @@ def get_files_to_process(input_dir, specified_files=None):
     
     return txt_files
 
+
 def main():
-    # 设置路径
-    input_dir = "Hotel/ip/ip/ip/"
-    output_dir = "Hotel/ip/"
-    
-    # 确保输出目录存在
-    os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(input_dir, exist_ok=True)
-    
-    # 检查输入目录是否存在
-    if not os.path.exists(input_dir):
-        print(f"错误: 输入目录 {input_dir} 不存在")
-        return
-    
-    # 设置命令行参数解析
-    parser = argparse.ArgumentParser(description='IP扫描工具')
-    parser.add_argument('files', nargs='*', help='要扫描的文件名（可指定多个）')
-    parser.add_argument('--all', action='store_true', help='扫描所有txt文件')
-    parserdef main():
     # 设置路径
     input_dir = "Hotel/ip/ip/ip/"
     output_dir = "Hotel/ip/"
