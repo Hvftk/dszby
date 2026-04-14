@@ -176,7 +176,7 @@ def check_ip_with_timeout(ip_port, timeout=3):
             'ip': ip_port
         }
 
-def scan_ips(ip_list, max_workers=20):
+def scan_ips(ip_list, max_workers=200):
     """
     并发扫描IP列表
     """
@@ -226,7 +226,7 @@ def scan_ips(ip_list, max_workers=20):
     
     return valid_ips, scan_stats
 
-def process_file(input_file_path, output_dir, max_workers=20):
+def process_file(input_file_path, output_dir, max_workers=200):
     """
     处理单个文件
     """
