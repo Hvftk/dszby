@@ -783,65 +783,6 @@ jobs:
                    return text
        
        
-       def parse_txt_format(txt_content, ip_port):
-           """解析TXT格式的频道数据，正确替换内网地址为公网IP"""
-           channels = []
-           lines = txt_content.strip().split('\n')
-       
-           # 提取IP和端口
-           try:
-               ip = ip_port.split(':')[0]
-               port = ip_port.split(':')[1]
-       
-               # 验证IP和端口格式
-               if not re.match(r'^\d+\.\d+\.\d+\.\d+$', ip):
-                   print(f"❌ 无效的IP格式: {ip}")
-                   return []
-               if not port.isdigit() or not (1 <= int(port) <= 65535):
-                   print(f"❌ 无效的端口: {port}")
-                   return []
-           except Exception as e:
-               print(f"❌ 解析IP端口失败: {ip_port}, 错误: {e}")
-               return []
-       
-           for line in lines:
-               line = line.strip()
-               if not line or ',' not in line:
-                   continue
-       
-               try:
-                   # 修复编码问题
-                   original_line = line
-                   line = fix_encoding(line)
-       
-                   # 分割频道名称和URL
-                   parts = line.split(',', 1)
-                   if len(parts) == 2:
-                       name = parts[0].strip()
-                       original_url = parts[1].strip()
-       
-                       # 处理URL路径
-                       if original_url:
-                           full_url = process_url(original_url, ip, port)
-       
-                           if full_url and validate_url_format(full_url, ip_port):
-                               # 创建频道数据
-                               channel_data = {
-                                   "name": name,
-                                   "url": full_url
-                               }
-                               channels.append(channel_data)
-                               print(f"✅ 解析频道: {name} -> {full_url}")
-                           else:
-                               print(f"⚠️ 跳过无效URL: {name} -> {original_url}")
-       
-               except Exception as e:
-                   print(f"❌ 解析TXT行失败: {original_line}, 错误: {e}")
-                   continue
-       
-           return channels
-       
-       
        def process_url(original_url, ip, port):
            """处理URL，正确替换内网地址"""
            try:
@@ -895,6 +836,79 @@ jobs:
            except Exception as e:
                print(f"❌ 验证URL格式失败: {url}, 错误: {e}")
                return False
+       
+       
+       def parse_txt_format(txt_content, ip_port):
+           """解析TXT格式的频道数据，正确替换内网地址"""
+           channels = []
+           lines = txt_content.strip().split('\n')
+       
+           # 提取IP和端口
+           try:
+               ip = ip_port.split(':')[0]
+               port = ip_port.split(':')[1]
+       
+               # 验证IP和端口格式
+               if not re.match(r'^\d+\.\d+\.\d+\.\d+$', ip):
+                   print(f"❌ 无效的IP格式: {ip}")
+                   return []
+               if not port.isdigit() or not (1 <= int(port) <= 65535):
+                   print(f"❌ 无效的端口: {port}")
+                   return []
+           except Exception as e:
+               print(f"❌ 解析IP端口失败: {ip_port}, 错误: {e}")
+               return []
+       
+           for line in lines:
+               line = line.strip()
+               if not line or ',' not in line:
+                   continue
+       
+               try:
+                   # 修复编码问题
+                   original_line = line
+                   line = fix_encoding(line)
+       
+                   # 分割频道名称和URL
+                   parts = line.split(',', 1)
+                   if len(parts) == 2:
+                       name = parts[0].strip()
+                       original_url = parts[1].strip()
+                       
+                       # 处理#号分隔的多个URL
+                       urls = original_url.split('#')
+                       
+                       for url_part in urls:
+                           url_part = url_part.strip()
+                           if not url_part:
+                               continue
+                               
+                           # 跳过UDP/RTP链接
+                           if url_part.startswith('udp://') or url_part.startswith('rtp://'):
+                               print(f"⏭️ 跳过UDP/RTP链接: {name} -> {url_part}")
+                               continue
+                               
+                           # 处理URL路径
+                           if url_part:
+                               full_url = process_url(url_part, ip, port)
+       
+                               if full_url and validate_url_format(full_url, ip_port):
+                                   # 创建频道数据
+                                   channel_data = {
+                                       "name": name,
+                                       "url": full_url
+                                   }
+                                   channels.append(channel_data)
+                                   print(f"✅ 解析频道: {name} -> {full_url}")
+                                   break  # 找到一个有效链接就停止
+                               else:
+                                   print(f"⚠️ 跳过无效URL: {name} -> {url_part}")
+       
+               except Exception as e:
+                   print(f"❌ 解析TXT行失败: {original_line}, 错误: {e}")
+                   continue
+       
+           return channels
        
        
        def test_channel_url_availability(channel_url, timeout=2):
@@ -1703,7 +1717,7 @@ jobs:
        
            try:
                with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
-                   update_time = datetime.now().strftime('%Y/%m/%d %H:%M')  #datetime.now().strftime('%Y/%m/%d %H:%M')
+                   update_time = datetime.now().strftime('%Y/%m/%d %H:%M')
                    f.write(f"{update_time},#genre#\n\n")
        
                    for category in sorted_categories:
@@ -1842,5 +1856,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "更新酒店源ip，增加频道链接可用性检查"
+        git commit -m "更新酒店源ip，增加频道链接可用性检查，处理UDP/RTP链接"
         git push
