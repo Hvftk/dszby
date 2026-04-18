@@ -450,8 +450,6 @@ def generate_speed_report(speed_results, fast_channels, config, test_time, stats
 
 
 # ====================== 原有的数据处理函数 ======================
-freetv_lines = []
-
 def load_modify_name(filename):
     """读取修改频道名称方法"""
     corrections = {}
@@ -487,13 +485,17 @@ def read_txt_to_array(file_name):
         print(f"An error occurred: {e}")
         return []
 
-def process_channel_line(line):
+def process_channel_line(line, freetv_dictionary, freetv_lines):
     """组织过滤后的freetv"""
     if "#genre#" not in line and "," in line and "://" in line:
-        channel_name, channel_address = line.split(',', 1)
-        freetv_lines.append(f"{channel_name},{channel_address}".strip())
+        try:
+            channel_name, channel_address = line.split(',', 1)
+            if channel_name in freetv_dictionary:
+                freetv_lines.append(f"{channel_name},{channel_address}".strip())
+        except ValueError:
+            pass
 
-def process_url(url):
+def process_url(url, freetv_dictionary, freetv_lines):
     """处理URL获取频道"""
     try:
         req = urllib.request.Request(url)
@@ -508,13 +510,7 @@ def process_url(url):
             
             for line in lines:
                 line = line.strip()
-                if "#genre#" not in line and "," in line and "://" in line:
-                    try:
-                        channel_name, channel_address = line.split(',', 1)
-                        if channel_name in freetv_dictionary:
-                            process_channel_line(line)
-                    except ValueError:
-                        continue
+                process_channel_line(line, freetv_dictionary, freetv_lines)
                         
             print(f"处理后得到 {len(freetv_lines)} 个有效频道")
 
@@ -524,9 +520,7 @@ def process_url(url):
 
 # ====================== 主程序 ======================
 def main():
-    global freetv_lines
-    
-    # 读取字典文件
+    # 首先读取字典文件
     print("正在加载频道字典...")
     rename_dic = load_modify_name('py/iptv源收集检测/assets/freetv/freetv_rename.txt')
     
@@ -538,6 +532,7 @@ def main():
     print(f"加载频道字典: 全部 {len(freetv_dictionary)} 个, CCTV {len(freetv_dictionary_cctv)} 个, 卫视 {len(freetv_dictionary_ws)} 个")
     
     # 初始化分类列表
+    freetv_lines = []
     freetv_cctv_lines = []
     freetv_ws_lines = []
     freetv_other_lines = []
@@ -548,7 +543,7 @@ def main():
     # 处理URL获取频道
     for url in urls:
         print(f"\n处理URL: {url}")
-        process_url(url)
+        process_url(url, freetv_dictionary, freetv_lines)
     
     # 检查是否获取到频道
     if not freetv_lines:
