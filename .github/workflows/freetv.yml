@@ -2,7 +2,7 @@ name: 'freetv'
 
 on:
   schedule:
-    - cron: '45 23 */2 * *'  # 每天UTC时间23:45运行
+    - cron: '0 11 * * *'  # 每天UTC时间11:00运行
   workflow_dispatch:
     inputs:
       environment:
