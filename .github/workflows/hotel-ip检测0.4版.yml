@@ -1,7 +1,7 @@
 name: hotel-ip检测0.4版
 on:
   schedule:
-    - cron: 0 11,23 * * *
+    - cron: 0 10,22 * * *
   workflow_dispatch:
 
 jobs:
