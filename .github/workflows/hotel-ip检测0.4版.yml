@@ -245,7 +245,7 @@ jobs:
                           "CCTV-少儿","CCTV14-少儿高清","CCTV 14"],
                "CCTV15": ["CCTV15", "CCTV-15", "CCTV15音乐","CCTV-15音乐", "CCTV15高清", "CCTV15HD", "cctv15","中央15台","sCCTV15-音乐","CCTV-音乐","CCTV15-音乐","CCTV 15"],
                "CCTV16": ["CCTV16", "CCTV-16", "CCTV16奥林匹克", "CCTV16高清", "CCTV16HD", "cctv16","中央16台",	"CCTV-16 奥林匹克","CCTV 16","奥林匹克","CCTV16-奥林匹克"],
-               "CCTV17": ["CCTV17", "CCTV-17", "CCTV17农业农村","CCTV17-农村农业","CCTV17农村农业","CCTV-17农业农村", "CCTV17高清", "CCTV17HD", "cctv17","中央17台","CCTV 17","CCTV-17农业"，
+               "CCTV17": ["CCTV17", "CCTV-17", "CCTV17农业农村","CCTV17-农村农业","CCTV17农村农业","CCTV-17农业农村", "CCTV17高清", "CCTV17HD", "cctv17","中央17台","CCTV 17","CCTV-17农业",
                           "CCTV17-农业",
                          ],
     
