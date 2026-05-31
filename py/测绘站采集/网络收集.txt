@@ -1,4 +1,4 @@
-2026/05/29 12:20更新,#genre#
+2026/05/31 12:33更新,#genre#
 �影,http://php.jdshipin.com:8880/1905.php?id=1905dy
 1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
@@ -43,6 +43,7 @@ TVBPlus源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbp
 
 港澳D组,#genre#
 TVB明珠,http://r.jdshipin.com/jUx8K
+TVB星河,http://r.jdshipin.com/Voac4
 TVB星河,http://r.jdshipin.com/sXuuD
 TVBPlus,http://r.jdshipin.com/Nr5jq
 TVBPlus,http://r.jdshipin.com/ndGgS
@@ -82,19 +83,6 @@ TVB武侠,https://cdn6.163189.xyz/163189/yzwx
 无线新闻,https://cdn6.163189.xyz/163189/wxxw
 
 港澳G组,#genre#
-TVBS精采,http://iptv.4666888.xyz/iptv2A.php?id=47
-TVBS新闻,http://iptv.4666888.xyz/iptv2A.php?id=43
-东森综合,http://iptv.4666888.xyz/iptv2A.php?id=58
-靖天电影,http://iptv.4666888.xyz/iptv2A.php?id=56
-靖洋戏剧,http://iptv.4666888.xyz/iptv2A.php?id=42
-龙华电影,http://iptv.4666888.xyz/iptv2A.php?id=45
-龙华洋片,http://iptv.4666888.xyz/iptv2A.php?id=60
-美亚电影,http://iptv.4666888.xyz/iptv2A.php?id=30
-民视,http://iptv.4666888.xyz/iptv2A.php?id=55
-民视影剧,http://iptv.4666888.xyz/iptv2A.php?id=53
-民视综艺,http://iptv.4666888.xyz/iptv2A.php?id=46
-
-港澳H组,#genre#
 TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 东森财经新闻台,https://www.youtube.com/watch?v=LbS-xQ67fos
 东森新闻台,https://www.youtube.com/live/V1p33hqPrUk?si=IyGTwsTSIL7hXDKN
@@ -108,6 +96,10 @@ TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 中视新闻台,https://www.youtube.com/watch?v=TCnaIE_SAtM
 中天新闻1台,https://www.youtube.com/watch?v=oIgbl7t0S_w
 中天新闻2台,https://www.youtube.com/watch?v=WPfPjbOLNfE
+
+港澳H组,#genre#
+凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 
 港澳I组,#genre#
 公视,http://74.91.26.218:82/live/pts.m3u8
