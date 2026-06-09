@@ -802,7 +802,6 @@ AMC电影,https://t.freetv.fun/live/amcdian-ying.m3u8
 靖天综合,https://t.freetv.fun/live/jing-tian-zong-he.m3u8
 靖天育乐,https://t.freetv.fun/live/jing-tian-yu-le.m3u8
 靖天资讯,https://t.freetv.fun/live/jing-tian-zi-xun.m3u8
-靖洋戏剧,https://t.freetv.fun/live/jing-yang-xi-ju-1.php
 
 频道,#genre#
 凤凰资讯,http://wo.xiang.lai.ge.bi.jiao.chang.de.yu.ming.wan.wan.jie.xi.bu.zhi.dao.ke.bu.ke.xing.hk3.345888.xyz.cdn.cloudflare.net/gt/aktv.php?variable=null-4
