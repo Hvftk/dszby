@@ -61,11 +61,6 @@ TVBPlus,http://50.7.234.10:8278/j2_twn/playlist.m3u8?tid=MFCF3274854132748541&ct
 八大戏剧,http://50.7.234.10:8278/badadrama/playlist.m3u8?tid=ME4E4734124647341246&ct=19225&tsum=c4e596572a79ad99675ee2137d1cc43d
 
 频道,#genre#
-超三联赛超三联赛武汉大区赛A档四分之一决赛【回放】深圳龙华启航20:19重庆瀚动13:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/605/514/5106605514/media/5106605514_5337683438_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701777732&pid=2028597139&timestamp=20260615120232&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965365157&ParentNodeID=-99&assertID=5701777732&client_ip=171.8.79.254&SecurityKey=20260615120232&promotionId=&mvid=5106605514&mcid=1003&mpid=120000579706&playurlVersion=WX-A1-9.6.0.4-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=2e5a8c73f3690b8db37cd2c509f1ac21&sv=10004&ct=android
-超三联赛超三联赛武汉大区赛A档半决赛及决赛【第3名排位赛回放】上海久事21:17深圳龙华启航18:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/605/608/5106605608/media/5106605608_5337692106_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701777884&pid=2028597139&timestamp=20260615120239&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965368454&ParentNodeID=-99&assertID=5701777884&client_ip=171.8.79.254&SecurityKey=20260615120239&promotionId=&mvid=5106605608&mcid=1003&mpid=120000579707&playurlVersion=WX-A1-9.6.0.4-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=f99cad5144d29ae0154cf6fe98efb54e&sv=10004&ct=android
-超三联赛超三联赛武汉大区赛A档半决赛及决赛【半决赛回放】上海横沙誉民22:11深圳龙华启航18:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/605/578/5106605578/media/5106605578_5337691195_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701777873&pid=2028597139&timestamp=20260615120239&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965368126&ParentNodeID=-99&assertID=5701777873&client_ip=171.8.79.254&SecurityKey=20260615120239&promotionId=&mvid=5106605578&mcid=1003&mpid=120000579707&playurlVersion=WX-A1-9.6.0.4-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=cf2fa4afdbd9395ebd75326140e08816&sv=10004&ct=android
-
-频道,#genre#
 翡翠台,http://iptv.4666888.xyz/iptv2A.php?id=34
 TVB千禧经典,http://iptv.4666888.xyz/iptv2A.php?id=22
 TVB娱乐新闻,http://iptv.4666888.xyz/iptv2A.php?id=36
@@ -95,19 +90,19 @@ TVB翡翠剧集,http://iptv.4666888.xyz/iptv2A.php?id=33
 频道,#genre#
 翡翠台,http://r.jdshipin.com/62WM7
 TVB明珠,http://r.jdshipin.com/jUx8K
+凤凰香港,http://r.jdshipin.com/NfC0f
+TVBPlus,http://r.jdshipin.com/ndGgS
 凤凰中文,http://r.jdshipin.com/cCCzW
 翡翠台,http://r.jdshipin.com/qClQf
 无线新闻,http://r.jdshipin.com/CkuBd
+TVB星河,http://r.jdshipin.com/sXuuD
 翡翠台,http://r.jdshipin.com/n90gt
 凤凰香港,http://r.jdshipin.com/yDoTN
 凤凰资讯,http://r.jdshipin.com/0Rp07
 翡翠台,http://r.jdshipin.com/qrfbg
 翡翠台,http://r.jdshipin.com/GeWKr
-TVB星河,http://r.jdshipin.com/sXuuD
-TVBPlus,http://r.jdshipin.com/ndGgS
-凤凰香港,http://r.jdshipin.com/NfC0f
-TVBPlus,http://r.jdshipin.com/Nr5jq
 TVB星河,http://r.jdshipin.com/Voac4
+TVBPlus,http://r.jdshipin.com/Nr5jq
 
 频道,#genre#
 龙华电影台,https://s2-10623-kwimgs.52520.xyz/4gtv.php?key=e7613508260c3c3d8d25b90c55a923bf&id=litv-longturn03
@@ -437,14 +432,14 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 TVB千禧经典,http://o11.163189.xyz/stream/live/tvbc/
 
 频道,#genre#
+凤凰卫视中文,https://cdn6.163189.xyz/163189/fhzw
 凤凰卫视中文,http://cdn6.163189.xyz/163189/fhzw
+凤凰卫视资讯,https://cdn6.163189.xyz/163189/fhzx
 凤凰卫视资讯,http://cdn6.163189.xyz/163189/fhzx
 凤凰卫视香港,http://cdn6.163189.xyz/163189/fhhk
+凤凰卫视香港,https://cdn6.163189.xyz/163189/fhhk
 TVB武侠,https://cdn6.163189.xyz/163189/yzwx
 翡翠台,https://cdn6.163189.xyz/163189/fct
-凤凰中文,https://cdn6.163189.xyz/163189/fhzw
-凤凰资讯,https://cdn6.163189.xyz/163189/fhzx
-凤凰香港,https://cdn6.163189.xyz/163189/fhhk
 无线新闻,https://cdn6.163189.xyz/163189/wxxw
 翡翠台,http://cdn6.163189.xyz/163189/fct4k
 翡翠台,http://cdn6.163189.xyz/163189/fct
