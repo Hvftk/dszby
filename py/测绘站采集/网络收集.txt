@@ -1,4 +1,4 @@
-2026/06/17 12:39更新,#genre#
+2026/06/19 13:02更新,#genre#
 �影,http://php.jdshipin.com:8880/1905.php?id=1905dy
 1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
@@ -89,6 +89,12 @@ TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 中天新闻2台,https://www.youtube.com/watch?v=WPfPjbOLNfE
 
 港澳G组,#genre#
+凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=77bd953dbf073e11b80bba0a8aca92c5&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+
+港澳H组,#genre#
 公视,http://74.91.26.218:82/live/pts.m3u8
 公视台语,http://74.91.26.218:82/live/ptsty.m3u8
 华视,http://74.91.26.218:82/live/cts.m3u8
@@ -100,7 +106,7 @@ TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 小公视,http://74.91.26.218:82/live/ptsse.m3u8
 中视,http://74.91.26.218:82/live/ctv.m3u8
 
-港澳H组,#genre#
+港澳I组,#genre#
 龙华电影,http://cdn8.163189.xyz/163189/lhdy
 龙华经典,http://cdn8.163189.xyz/163189/lhjd
 龙华卡通,http://cdn8.163189.xyz/163189/lhkt
