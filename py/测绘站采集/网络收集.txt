@@ -1,4 +1,4 @@
-2026/06/19 13:02更新,#genre#
+2026/06/21 12:56更新,#genre#
 �影,http://php.jdshipin.com:8880/1905.php?id=1905dy
 1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
@@ -74,22 +74,9 @@ TVB武侠,https://cdn6.163189.xyz/163189/yzwx
 无线新闻,https://cdn6.163189.xyz/163189/wxxw
 
 港澳F组,#genre#
-TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
-东森财经新闻台,https://www.youtube.com/watch?v=LbS-xQ67fos
-东森新闻台,https://www.youtube.com/live/V1p33hqPrUk?si=IyGTwsTSIL7hXDKN
-华视新闻台,https://www.youtube.com/watch?v=wM0g8EoUZ_E
-寰宇新闻台,https://www.youtube.com/watch?v=6IquAgfvYmc
-民视新闻台,https://www.youtube.com/watch?v=ylYJSBUgaMA
-三立NEWS+,https://www.youtube.com/watch?v=oZdzzvxTfUY
-三立iNEWS,https://www.youtube.com/watch?v=CKjSm5ZeehE
-三立新闻台,https://www.youtube.com/watch?v=FoBfXvlOR6I
-台视新闻台,https://www.youtube.com/watch?v=xL0ch83RAK8
-中视新闻台,https://www.youtube.com/watch?v=TCnaIE_SAtM
-中天新闻1台,https://www.youtube.com/watch?v=oIgbl7t0S_w
-中天新闻2台,https://www.youtube.com/watch?v=WPfPjbOLNfE
+超三联赛成都争霸赛小组赛Day2晚间场【回放】深圳龙华启航22:15广东悦跑豹猫18:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/613/150/5106613150/media/5106613150_5338036039_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701785329&pid=2028597139&timestamp=20260621120240&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965531760&ParentNodeID=-99&assertID=5701785329&client_ip=171.8.79.254&SecurityKey=20260621120240&promotionId=&mvid=5106613150&mcid=1003&mpid=120000580459&playurlVersion=WX-A1-9.6.1.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=dd306fd435f62507941db8e8dc3961ef&sv=10004&ct=android
 
 港澳G组,#genre#
-凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=77bd953dbf073e11b80bba0a8aca92c5&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
