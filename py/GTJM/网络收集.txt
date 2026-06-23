@@ -7,7 +7,6 @@ AMC电影台,https://test.946985.filegear-sg.me/proxy/b76b254f6596b0e4
 TVB翡翠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9478&tk=97475bb89d45
 TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 采昌影剧台,https://test.946985.filegear-sg.me/proxy/59a9aa38b14b8497
-电影迷小雅,https://live.ottiptv.cc/douyu/9639225
 东森电影台,https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv
 靖天戏剧台,https://stream1.freetv.fun/jing-tian-xi-ju-4.ctv
 靖天戏剧台,https://test.946985.filegear-sg.me/proxy/e15a73b3e057b98b
@@ -17,7 +16,6 @@ TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 龙华戏剧台,http://cdn8.163189.xyz/163189/lhxj
 美亚电影台,http://zjrtv.vip/live/?tbs=mydy
 纬来电影台,https://stream1.freetv.fun/wei-lai-dian-ying-1.m3u8
-影迷心公社,https://live.ottiptv.cc/huya/30522289
 1905流金岁月,https://cdn.jdshipin.com/1905.php
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
@@ -43,10 +41,10 @@ TVBJ1源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbj1
 TVBJ1,https://stream1.freetv.fun/fei-cui-tai-bei-mei-ban-1.ctv
 TVBS精采,https://test.946985.filegear-sg.me/proxy/6cece77d92558ddc
 TVBS亚洲,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd
+TVBS,http://rihou.cc:555/tv/TVBS1
 TVBS,https://test.946985.filegear-sg.me/proxy/9376eaeb02d189d2
 TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 八大综合台,https://stream1.freetv.fun/ba-da-zong-he-1.m3u8
-超三联赛成都争霸赛小组赛Day2晚间场【回放】深圳龙华启航22:15广东悦跑豹猫18:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/613/150/5106613150/media/5106613150_5338036039_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701785329&pid=2028597139&timestamp=20260621120240&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965531760&ParentNodeID=-99&assertID=5701785329&client_ip=171.8.79.254&SecurityKey=20260621120240&promotionId=&mvid=5106613150&mcid=1003&mpid=120000580459&playurlVersion=WX-A1-9.6.1.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=dd306fd435f62507941db8e8dc3961ef&sv=10004&ct=android
 东森,https://stream1.freetv.fun/dong-sen-mei-zhou-xin-wen-1.m3u8
 东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-2.m3u8
 东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-4.m3u8
@@ -105,6 +103,7 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 凤凰香港,http://r.jdshipin.com/yDoTN
 凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-5.ctv
 凤凰中文,http://r.jdshipin.com/cCCzW
+凤凰中文,https://stream1.freetv.fun/2b657a181daa345025199e7d6b8de95a1a87b19abceafbd16e2499a49da33c6f.m3u8
 凤凰中文,https://stream1.freetv.fun/4e695e885cc20b20b7e3ec874fe52ed75e27443778c8ff29e498c4c9d7cec4a0.m3u8
 凤凰中文,https://stream1.freetv.fun/feng-huang-zhong-wen-10.m3u8
 凤凰中文,https://stream1.freetv.fun/feng-huang-zhong-wen-11.m3u8
@@ -117,6 +116,7 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 凤凰资讯台,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
 凤凰资讯台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzx
 凤凰资讯台,http://r.jdshipin.com/0Rp07
+凤凰资讯台,https://stream1.freetv.fun/a5857ad51b58a0f7a8c9cbdf291571692b0eed9f5ab2cfce97a211260533c0d8.m3u8
 凤凰资讯台,https://stream1.freetv.fun/feng-huang-zi-xun-1.m3u8
 凤凰资讯台,https://stream1.freetv.fun/feng-huang-zi-xun-2.ctv
 公视,http://211.72.174.95:8116/0.ts
@@ -188,12 +188,11 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 小公视,http://74.91.26.218:82/live/ptsse.m3u8
 心病赵本山,http://uptt.gcwduoduo.com/v/190528/ad11d8507454d002d52cf31e5515bde2.mp4
 杨钰莹轻轻告诉你,http://vodcdn.video.taobao.com/oss/ali-video/1905c60363f40cea52f342ec59132da0/video.m3u8
-易中天品三国完整版,https://live.ottiptv.cc/yy/1461244449
 中华小当家,https://live.ottiptv.cc/huya/11342413
 中视,http://211.72.174.95:8113/0.ts
 中视,http://37.27.111.214:8080/live/7/hls.m3u8
 中视,http://74.91.26.218:82/live/ctv.m3u8
-中视,https://t.freetv.fun/live/zhong-shi-1.ts
+中视,https://t.freetv.fun/live/zhong-shi-2.ts
 中视,https://test.946985.filegear-sg.me/proxy/643626fecd860e6a
 中天新闻台,http://222.128.55.152:9080/live/fc.m3u8
 中天新闻台,https://stream1.freetv.fun/zhong-tian-xin-wen-4.m3u8
