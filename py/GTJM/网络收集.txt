@@ -7,6 +7,7 @@ AMC电影台,https://test.946985.filegear-sg.me/proxy/b76b254f6596b0e4
 TVB翡翠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9478&tk=97475bb89d45
 TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 采昌影剧台,https://test.946985.filegear-sg.me/proxy/59a9aa38b14b8497
+电影迷小雅,https://live.ottiptv.cc/douyu/9639225
 东森电影台,https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv
 靖天戏剧台,https://stream1.freetv.fun/jing-tian-xi-ju-4.ctv
 靖天戏剧台,https://test.946985.filegear-sg.me/proxy/e15a73b3e057b98b
@@ -16,9 +17,10 @@ TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 龙华戏剧台,http://cdn8.163189.xyz/163189/lhxj
 美亚电影台,http://zjrtv.vip/live/?tbs=mydy
 纬来电影台,https://stream1.freetv.fun/wei-lai-dian-ying-1.m3u8
+影迷心公社,https://live.ottiptv.cc/huya/30522289
 1905流金岁月,https://cdn.jdshipin.com/1905.php
-TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
+TVB明珠,http://cdn9.163189.xyz/smt1.1.php?id=pearl_twn
 TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt
 TVB明珠,http://r.jdshipin.com/jUx8K
 TVB千禧经典台,http://o11.163189.xyz/stream/live/tvbc/
@@ -35,9 +37,7 @@ TVB星河国语,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe
 TVB娱乐新闻台,http://php.jdshipin.com/TVOD/iptv.php?id=tvbylxw
 TVB娱乐新闻台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct2
 TVB,http://67.220.71.199:2347/livehttpplay?channel_id=30023
-TVB1,https://6.cdn.loc.cc/163189.php?id=tvb1
 TVBJ1源1,http://php.jdshipin.com/TVOD/iptv.php?id=j1
-TVBJ1源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbj1
 TVBJ1,https://stream1.freetv.fun/fei-cui-tai-bei-mei-ban-1.ctv
 TVBS精采,https://test.946985.filegear-sg.me/proxy/6cece77d92558ddc
 TVBS亚洲,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd
@@ -60,6 +60,7 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 东森洋片,https://stream1.freetv.fun/dong-sen-yang-pian-3.m3u8
 翡翠台,http://cdn6.163189.xyz/163189/fct
 翡翠台,http://cdn6.163189.xyz/163189/fct4k
+翡翠台,http://cdn9.163189.xyz/smt1.1.php?id=jade_twn
 翡翠台,http://o11.163189.xyz/stream/tvb/fct/
 翡翠台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 翡翠台,http://r.jdshipin.com/62WM7
@@ -73,7 +74,6 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 翡翠台版,http://php.jdshipin.com:8880/TVOD/iptv.php?id=j1
 翡翠台马来西亚版,http://php.jdshipin.com/TVOD/iptv.php?id=huali
 翡翠台双音轨双字幕,http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=SDsUDT&tk=SLK5QjnsRiya
-翡翠台源1,http://php.jdshipin.com/TVOD/iptv.php?id=fct3
 翡翠台源2,http://php.jdshipin.com/TVOD/iptv.php?id=fct4
 翡翠台源3,http://php.jdshipin.com/TVOD/iptv.php?id=fct
 翡翠台源4,http://php.jdshipin.com/TVOD/iptv.php?id=fct2
@@ -88,7 +88,6 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 凤凰卫视中文,http://cdn6.163189.xyz/163189/fhzw
 凤凰卫视中文,http://push.cdn1.hls123.de:8080/streams/a4y2t99pzyi/index.m3u8
 凤凰卫视中文,https://cdn6.163189.xyz/163189/fhzw
-凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视中文,https://test.946985.filegear-sg.me/proxy/262c16de37dff45a
 凤凰卫视资讯台,http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=Faxroa&tk=SLK5QjnsRiya
@@ -166,7 +165,6 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 三立新闻台,https://stream1.freetv.fun/san-li-xin-wen-5.ctv
 台视,http://211.72.174.95:8112/0.ts
 台视,http://74.91.26.218:82/live/ttv.m3u8
-台视,https://t.freetv.fun/live/tai-shi-1.m3u8
 台视财经,http://74.91.26.218:82/live/ttvcj.m3u8
 台视新闻台,http://222.128.55.152:9080/live/ts.m3u8
 台视新闻台,https://stream1.freetv.fun/tai-shi-xin-wen-1.m3u8
@@ -188,6 +186,7 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 小公视,http://74.91.26.218:82/live/ptsse.m3u8
 心病赵本山,http://uptt.gcwduoduo.com/v/190528/ad11d8507454d002d52cf31e5515bde2.mp4
 杨钰莹轻轻告诉你,http://vodcdn.video.taobao.com/oss/ali-video/1905c60363f40cea52f342ec59132da0/video.m3u8
+易中天品三国完整版,https://live.ottiptv.cc/yy/1461244449
 中华小当家,https://live.ottiptv.cc/huya/11342413
 中视,http://211.72.174.95:8113/0.ts
 中视,http://37.27.111.214:8080/live/7/hls.m3u8
