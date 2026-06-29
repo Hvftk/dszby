@@ -1,4 +1,4 @@
-2026/06/29 20:11更新,#genre#
+2026/06/30 07:10更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -20809,6 +20809,8 @@ CCTV8,http://125.42.150.155:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&a
 CCTV15,http://106.115.24.152:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV17,http://106.115.24.152:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV9,http://221.193.168.213:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV5,http://125.42.150.155:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV10,http://125.42.150.155:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
 
 卫视频道,#genre#
 湖北卫视,http://1.195.131.69:9909/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
