@@ -1,4 +1,4 @@
-2026/07/03 18:16更新,#genre#
+2026/07/04 07:17更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -37606,6 +37606,7 @@ SCTV康巴卫视,http://124.161.172.155:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 河北卫视,http://36.40.236.156:9999/tsfile/live/0138_2.m3u8?key=txiptv&playlive=0&authid=0
 东南卫视,http://36.40.236.156:9999/tsfile/live/0137_2.m3u8?key=txiptv&playlive=0&authid=0
 黑龙江卫视,http://36.40.236.156:9999/tsfile/live/0143_2.m3u8?key=txiptv&playlive=0&authid=0
+广西卫视,http://106.115.24.228:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江频道,#genre#
 浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
