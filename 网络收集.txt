@@ -61,8 +61,21 @@ TVBPlus,http://50.7.234.10:8278/j2_twn/playlist.m3u8?tid=MFCF3274854132748541&ct
 八大戏剧,http://50.7.234.10:8278/badadrama/playlist.m3u8?tid=ME4E4734124647341246&ct=19225&tsum=c4e596572a79ad99675ee2137d1cc43d
 
 频道,#genre#
-CCTV8,http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cctv8hd265/54/20200407/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=699004&netType=0&sid=5500212868&pid=2028597139&timestamp=20260703080204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878356&ParentNodeID=-99&assertID=5500212868&client_ip=171.8.79.254&SecurityKey=20260703080204&promotionId=&mvid=5100001695&mcid=500020&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4b758f0a419058180df46113b061665a&sv=10004&ct=android
-CCTV12,http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=f863b466d46e2ff46401579155d4a125&mdspid=&spid=699004&netType=4&sid=5501083627&pid=2028597139&timestamp=20260703061905&Channel_ID=0116_2600037000-99000-200300220114247&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=116.128.189.77&SecurityKey=20260703061905&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=ZQ-A1-9.6.1.6-SNAPSHOT&userid=1834153345&jmhm=f863b466d46e2ff46401579155d4a125&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d8677fcb777d4e94e0751abfc69edd65
+凤凰香港台,https://flv-play.clouda.com/live/fhxg-s6ZqbJPCkU54D3ojHvlJm4el9wbnzF1VJ6J0oPumsZIfuPtYq1enmIhy43vWcUaaPf4U2xRRWNGOXX5BiusMXxxQ.flv
+凤凰中文,https://flv-play.clouda.com/live/fhzw-6zSJoUiicyU3ovDlMvflVRLQlVCMRCARnyJ0NPlfcs3eWJNeJSDRMAz4VgeQV3Diy6.flv
+凤凰资讯,https://flv-play.clouda.com/live/fhzx-gCDIOsNFJ7DX5OI8hsebeQNHPm66LAMZgmIcGYcfIIEzXWKCVG2cQgbZdRq2aUVqJR.flv
+TVBplus,https://flv-play.clouda.com/live/tvb-FprfdHRC4E2zEY1wj7Pb4QGnSbcnZQUmKI312vWZBCiYtgtDLOyBp99qnWsgOOpwzBS6GW0yVjbAPGcFvA6sbnc3.flv
+
+频道,#genre#
+世界杯哥伦比亚VS加纳全场回放（沈云怡、兰子非）08:30,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/626/427/5106626427/media/5106626427_5338841905_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701805439&pid=2028597139&timestamp=20260705100216&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965950302&ParentNodeID=-99&preview=1&playseek=000000-000600&assertID=5701805439&client_ip=171.8.79.254&SecurityKey=20260705100216&promotionId=&mvid=5106626427&mcid=1003&mpid=120000575601&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=be919d5e1e58f1c0d39c05521297eb0e&sv=10004&ct=android
+超三联赛超三联赛上海崇明大区赛A档小组赛【回放】深圳龙华启航21:13福州奇迹12:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/626/495/5106626495/media/5106626495_5338848754_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701805619&pid=2028597139&timestamp=20260705080226&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965953846&ParentNodeID=-99&assertID=5701805619&client_ip=171.8.79.254&SecurityKey=20260705080226&promotionId=&mvid=5106626495&mcid=1003&mpid=120000581908&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d2f4c642679df9a79942d1a9240a8a0c&sv=10004&ct=android
+超三联赛超三联赛上海崇明大区赛A档小组赛【回放】宁波海曙捷英21:8深圳龙华启航12:55,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/626/503/5106626503/media/5106626503_5338855398_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701805742&pid=2028597139&timestamp=20260705080228&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965957252&ParentNodeID=-99&assertID=5701805742&client_ip=171.8.79.254&SecurityKey=20260705080228&promotionId=&mvid=5106626503&mcid=1003&mpid=120000581908&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=ddbfd1e86f5c371ca40e849a96c9a6a6&sv=10004&ct=android
+
+频道,#genre#
+BWF汤杯经典重映-中国3-0丹麦【回放】石宇奇2-0安东森（余博洋）12:00,http://mgsp.vod.miguvideo.com:8088/depository_eos_wxlz04/asset/zhengshi/5106/405/839/5106405839/media/5106405839_5335411942_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701718744&pid=2028597139&timestamp=20260705080225&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=964551258&ParentNodeID=-99&assertID=5701718744&client_ip=171.8.79.254&SecurityKey=20260705080225&promotionId=&mvid=5106405839&mcid=1003&mpid=120000574868&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=af21503072ebb5f3fdf3134db977d3e6&sv=10004&ct=android
+
+频道,#genre#
+超三联赛超三联赛上海崇明大区赛A档12进8及B档决赛【回放】深圳龙华启航12:20成都和众18:30,http://hlsztemgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/626/784/5106626784/media/5106626784_5338869756_56.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701805925&pid=2028597139&timestamp=20260705100225&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=965966455&ParentNodeID=-99&assertID=5701805925&client_ip=171.8.79.254&SecurityKey=20260705100225&promotionId=&mvid=5106626784&mcid=1003&mpid=120000581909&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=64e9c56079aa052975d8b227fc1aa0da&sv=10004&ct=android
 
 频道,#genre#
 翡翠台,http://iptv.4666888.xyz/iptv2A.php?id=34
@@ -424,29 +437,16 @@ TVB明珠,http://php.jdshipin.com/smt.php?id=pearl_twn
 TVB千禧经典,http://php.jdshipin.com/TVOD/iptv.php?id=tvbc
 
 频道,#genre#
-TVBPlus,https://o11.163189.xyz/stream/tvb/tvbp/
-天映,http://o11.163189.xyz/stream/live/typd/
-天映经典,http://o11.163189.xyz/stream/live/ccm/
-翡翠台,http://o11.163189.xyz/stream/tvb/fct/
-翡翠台4K,https://o11.163189.xyz/stream/tvb/fct4k/
-TVB星河,https://o11.163189.xyz/stream/live/tvbxh/
-TVB千禧经典,https://o11.163189.xyz/stream/live/tvbc/
-天映,https://o11.163189.xyz/stream/live/typd/
-TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
-TVB千禧经典,http://o11.163189.xyz/stream/live/tvbc/
-
-频道,#genre#
-凤凰卫视中文,https://cdn6.163189.xyz/163189/fhzw
-凤凰卫视中文,http://cdn6.163189.xyz/163189/fhzw
-凤凰卫视资讯,https://cdn6.163189.xyz/163189/fhzx
-凤凰卫视资讯,http://cdn6.163189.xyz/163189/fhzx
-凤凰卫视香港,https://cdn6.163189.xyz/163189/fhhk
-凤凰卫视香港,http://cdn6.163189.xyz/163189/fhhk
+凤凰中文,http://cdn6.163189.xyz/163189/fhzw
+凤凰香港,http://cdn6.163189.xyz/163189/fhhk
 TVB武侠,https://cdn6.163189.xyz/163189/yzwx
 翡翠台,https://cdn6.163189.xyz/163189/fct
+凤凰中文,https://cdn6.163189.xyz/163189/fhzw
+凤凰资讯,https://cdn6.163189.xyz/163189/fhzx
+凤凰香港,https://cdn6.163189.xyz/163189/fhhk
 无线新闻,https://cdn6.163189.xyz/163189/wxxw
-翡翠台,http://cdn6.163189.xyz/163189/fct4k
-翡翠台,http://cdn6.163189.xyz/163189/fct
+凤凰资讯,http://cdn6.163189.xyz/163189/fhzx
+翡翠台4K,http://cdn6.163189.xyz/163189/fct4k
 
 频道,#genre#
 凤凰资讯,http://api.kkitv.itv888.vip:8080/streams/wzt3qbit80m/index.m3u8
@@ -454,6 +454,18 @@ TVB武侠,https://cdn6.163189.xyz/163189/yzwx
 翡翠台backup,http://api.kkitv.itv888.vip:8080/streams/jutaw8wu0j9/index.m3u8
 凤凰卫视,http://api.kkitv.itv888.vip:8080/streams/vny1wblsnch/index.m3u8
 翡翠台,http://api.kkitv.itv888.vip:8080/streams/91wc8xdtj8/index.m3u8
+
+频道,#genre#
+天映,http://o11.163189.xyz/stream/live/typd/
+天映经典,http://o11.163189.xyz/stream/live/ccm/
+翡翠台4K,https://o11.163189.xyz/stream/tvb/fct4k/
+翡翠台,http://o11.163189.xyz/stream/tvb/fct/
+TVB星河,https://o11.163189.xyz/stream/live/tvbxh/
+TVB千禧经典,https://o11.163189.xyz/stream/live/tvbc/
+TVBPlus,https://o11.163189.xyz/stream/tvb/tvbp/
+天映,https://o11.163189.xyz/stream/live/typd/
+TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
+TVB千禧经典,http://o11.163189.xyz/stream/live/tvbc/
 
 频道,#genre#
 龙华经典,http://cdn8.163189.xyz/163189/lhjd
@@ -782,13 +794,18 @@ AXN电影,http://cookies.elementfx.com/chaojidianshi/chaojidianshi.php?id=axn
 
 频道,#genre#
 中视,https://t.freetv.fun/live/zhong-shi-1-1.m3u8
-中视,https://t.freetv.fun/live/zhong-shi-2.ts
+中视,https://t.freetv.fun/live/zhong-shi-2-1.php
+中视,https://t.freetv.fun/live/zhong-shi-3.ts
+台视,https://t.freetv.fun/live/tai-shi-1-2.php
 影迷数位电影,https://t.freetv.fun/live/ying-mi-shu-wei-dian-ying.m3u8
+纬来电影,https://t.freetv.fun/live/wei-lai-dian-ying.php
 华视,https://t.freetv.fun/live/hua-shi-1-2.m3u8
 华视,https://t.freetv.fun/live/hua-shi-2.ts
 靖天卡通,https://t.freetv.fun/live/jing-tian-qia-tong.m3u8
 靖天戏剧,https://t.freetv.fun/live/jing-tian-xi-ju.m3u8
 靖天日本,https://t.freetv.fun/live/jing-tian-ri-ben.m3u8
+靖天综合,https://t.freetv.fun/live/jing-tian-zong-he.m3u8
+靖洋戏剧,https://t.freetv.fun/live/jing-yang-xi-ju-1.m3u8
 靖洋戏剧,https://t.freetv.fun/live/jing-yang-xi-ju.php
 
 频道,#genre#
