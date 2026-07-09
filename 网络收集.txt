@@ -125,6 +125,7 @@ TVB星河,http://r.jdshipin.com/Voac4
 香港卫视,https://stream1.freetv.fun/5335c88a9a7d8b74173b491f480d4f94e8d3bd596af54478106aa2399e6c7917.ctv
 香港卫视,https://stream1.freetv.fun/c751876ae5ceaa0d82b5cf2badc152342aa92a4b45bf504d12ee45966b2fc644.ctv
 香港卫视,https://stream1.freetv.fun/5335c88a9a7d8b74173b491f480d4f94e8d3bd596af54478106aa2399e6c7917.m3u8
+香港卫视,https://stream1.freetv.fun/ae7eaf28d8610cdc1651ef6a1f7dbb24b49c5a87627d0d881330afaea37a1616.m3u8
 靖天资讯,https://stream1.freetv.fun/jing-tian-zi-xun-2.ctv
 纬来电影,https://stream1.freetv.fun/wei-lai-dian-ying-1.m3u8
 纬来电影,https://stream1.freetv.fun/wei-lai-dian-ying-3.m3u8
@@ -134,7 +135,6 @@ TVB星河,http://r.jdshipin.com/Voac4
 东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-4.m3u8
 东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-2.m3u8
 东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-7.ctv
-东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-8.m3u8
 东森,https://stream1.freetv.fun/dong-sen-mei-zhou-xin-wen-1.m3u8
 靖洋戏剧,https://stream1.freetv.fun/jing-yang-xi-ju-1.ctv
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-4.m3u8
@@ -158,6 +158,7 @@ TVBPlus,https://stream1.freetv.fun/tvb-j2-2.ctv
 寰宇新闻,https://stream1.freetv.fun/huan-yu-xin-wen-4.m3u8
 凤凰资讯,https://stream1.freetv.fun/a5857ad51b58a0f7a8c9cbdf291571692b0eed9f5ab2cfce97a211260533c0d8.m3u8
 凤凰中文,https://stream1.freetv.fun/feng-huang-zhong-wen-12.m3u8
+东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-8.m3u8
 东森新闻,https://stream1.freetv.fun/dong-sen-xin-wen-5.ctv
 东森卫视,https://stream1.freetv.fun/dong-sen-mei-zhou-wei-shi-1.m3u8
 台视新闻,https://stream1.freetv.fun/tai-shi-xin-wen-10.m3u8
@@ -167,7 +168,6 @@ TVBPlus,https://stream1.freetv.fun/tvb-j2-2.ctv
 中天新闻,https://stream1.freetv.fun/zhong-tian-xin-wen-4.m3u8
 凤凰中文,https://stream1.freetv.fun/feng-huang-zhong-wen-11.m3u8
 翡翠台,https://stream1.freetv.fun/fei-cui-2.ctv
-香港卫视,https://stream1.freetv.fun/ae7eaf28d8610cdc1651ef6a1f7dbb24b49c5a87627d0d881330afaea37a1616.m3u8
 凤凰中文,https://stream1.freetv.fun/feng-huang-zhong-wen-5.ctv
 凤凰资讯,https://stream1.freetv.fun/feng-huang-zi-xun-2.ctv
 东森新闻,https://stream1.freetv.fun/dong-sen-xin-wen-3.ctv
@@ -444,9 +444,6 @@ TVB千禧经典,http://php.jdshipin.com/TVOD/iptv.php?id=tvbc
 龙华卡通,http://cdn8.163189.xyz/163189/lhkt
 
 频道,#genre#
-BWF尤杯经典重映-中国1-3韩国【回放】陈雨菲0-2金佳恩（鸿昆、杜玥）12:00,http://hlszymgspvod.miguvideo.com:8080/depository_eos_wxlz04/asset/zhengshi/5106/406/089/5106406089/media/5106406089_5335433132_594.mg001.mp4.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=800033&netType=0&sid=5701719054&pid=2028597139&timestamp=20260707060217&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=964560178&ParentNodeID=-99&assertID=5701719054&client_ip=171.8.79.254&SecurityKey=20260707060217&promotionId=&mvid=5106406089&mcid=1003&mpid=120000574869&playurlVersion=WX-A1-9.6.1.6-SNAPSHOT&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=9646b22330c420f4f1b552043aab32a7&sv=10004&ct=android
-
-频道,#genre#
 凤凰中文,http://cdn6.163189.xyz/163189/fhzw
 凤凰香港,http://cdn6.163189.xyz/163189/fhhk
 TVB武侠,https://cdn6.163189.xyz/163189/yzwx
@@ -500,7 +497,6 @@ TVB千禧经典,https://smt.1678520.xyz/smt3.2.5.php?id=Tvbclassic
 靖洋戏剧,https://cdn12.178.indevs.in/163189/25084ef5a2662aad
 影迷数位电影,https://cdn12.178.indevs.in/163189/a643783ec587540e
 AMC电影,https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
-公视戏剧,https://cdn12.178.indevs.in/163189/2973b910e7719c08
 
 频道,#genre#
 中视,https://litv.tzh911.qzz.io/litv.php?id=4gtv-4gtv040&token=https://t.me/GPT_858
@@ -641,7 +637,6 @@ TVBS精彩,http://api.mytv666.top/api/hk.php?id=39653165306634613739326235373730
 纬来育乐,http://api.mytv666.top/api/hk.php?id=3165616132653636313766396265326639656663626530326530386464616563267469643d77696e74763132332669643d3831
 
 频道,#genre#
-凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视资讯,https://live.264788.xyz/channel/fenghuangweishizixun?streamid=77bd953dbf073e11b80bba0a8aca92c5&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 凤凰卫视中文,https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
