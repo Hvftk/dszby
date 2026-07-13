@@ -72,5 +72,3 @@
 龙泉公共新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
 龙游新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
 龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
-卡酷少儿,http://221.13.235.98:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-电视剧,http://221.13.235.98:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
