@@ -6,10 +6,10 @@
 TVB翡翠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9478&tk=97475bb89d45
 TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 采昌影剧台,https://t.freetv.fun/live/cai-chang-ying-ju-2.m3u8
-电影迷小雅,https://live.ottiptv.cc/douyu/9639225
 东森电影台,https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv
 靖天电影台,http://aktv.top/AKTV/live/aktv/null-6/AKTV.m3u8
 靖天戏剧台,https://stream1.freetv.fun/jing-tian-xi-ju-4.ctv
+靖天戏剧台,https://t.freetv.fun/live/jing-tian-xi-ju.m3u8
 靖洋戏剧台,https://stream1.freetv.fun/jing-yang-xi-ju-1.ctv
 龙华电影台,http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8
 龙华电影台,http://cdn8.163189.xyz/163189/lhdy
@@ -19,8 +19,8 @@ TVB明珠剧集,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5300&tk=97475bb89d45
 美亚电影台,http://zjrtv.vip/live/?tbs=mydy
 纬来电影台,https://stream1.freetv.fun/wei-lai-dian-ying-1.m3u8
 纬来电影台,https://stream1.freetv.fun/wei-lai-dian-ying-3.m3u8
+影迷数位电影台,https://t.freetv.fun/live/ying-mi-shu-wei-dian-ying-2.m3u8
 1905流金岁月,https://cdn.jdshipin.com/1905.php
-AXN,http://aktv.top/AKTV/live/aktv2/axn/AKTV.m3u8
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
 TVB明珠,http://cdn9.163189.xyz/smt1.1.php?id=pearl_twn
 TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt
@@ -41,6 +41,7 @@ TVB娱乐新闻台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct2
 TVB,http://67.220.71.199:2347/livehttpplay?channel_id=30023
 TVBJ1源1,http://php.jdshipin.com/TVOD/iptv.php?id=j1
 TVBJ1,https://stream1.freetv.fun/fei-cui-tai-bei-mei-ban-1.ctv
+TVBS新闻台,http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
 TVBS亚洲,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd
 TVBS,http://aktv.top/AKTV/live/aktv/tvbs/AKTV.m3u8
 TVBS,http://rihou.cc:555/tv/TVBS1
@@ -134,6 +135,8 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 寰宇新闻台,https://stream1.freetv.fun/huan-yu-xin-wen-6.m3u8
 寰宇新闻台,https://stream1.freetv.fun/huan-yu-xin-wen-7.m3u8
 靖天资讯台,https://stream1.freetv.fun/jing-tian-zi-xun-2.ctv
+靖天资讯台,https://t.freetv.fun/live/jing-tian-zi-xun.m3u8
+靖天综合台,https://t.freetv.fun/live/jing-tian-zong-he.m3u8
 龙华经典台,http://aktv.top/AKTV/live/aktv/null-7/AKTV.m3u8
 龙华经典台,http://cdn8.163189.xyz/163189/lhjd
 龙华经典台,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
@@ -181,7 +184,6 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 纬来育乐,https://live.catvod.com/live.php?id=videolandmax
 纬来育乐,https://live.catvod.com/live.php?id=videolandyule
 无线华丽,http://php.jdshipin.com:8880/TVOD/iptv.php?id=huali
-无线卫星新闻台,http://aktv.top/AKTV/live/aktv3/null-2/AKTV.m3u8
 无线新闻台,http://aktv.top/AKTV/live/aktv/null-1/AKTV.m3u8
 无线新闻台,http://aktv.top/AKTV/live/aktv/null-20/AKTV.m3u8
 无线新闻台,http://cdn9.163189.xyz/smt1.1.php?id=inews_twn
@@ -204,3 +206,4 @@ TVBlus,http://o11.163189.xyz/stream/tvb/tvbp/
 中天新闻台,http://aktv.top/AKTV/live/aktv/null-8/AKTV.m3u8
 中天新闻台,https://stream1.freetv.fun/zhong-tian-xin-wen-4.m3u8
 中天新闻备,http://jnzq.ohoyee.com:9080/live/xingjiaoge-ztxw2.m3u8
+中天亚洲,http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
