@@ -1,4 +1,4 @@
-2026/07/26 07:07更新,#genre#
+2026/07/26 17:27更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -21439,6 +21439,7 @@ CCTV13,http://125.42.150.231:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&
 CCTV13,http://221.13.235.11:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV15,http://221.13.235.11:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV15,http://125.42.150.231:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV14,http://221.13.235.11:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
 
 卫视频道,#genre#
 湖北卫视,http://1.195.131.69:9909/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -40506,6 +40507,7 @@ SCTV康巴卫视,http://124.161.172.155:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 河南戏曲,http://106.115.24.95:9901/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 河南戏曲,http://221.13.234.194:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
 河南戏曲,http://221.13.235.11:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
+河南戏曲,http://221.13.234.238:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
 广西频道,#genre#
 广西综艺,http://36.136.38.87:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 广西都市,http://36.136.38.87:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -51320,3 +51322,10 @@ IPTV热播剧场,http://119.129.173.176:9901/tsfile/live/1008_1.m3u8?key=txiptv&
 卡酷少儿,http://221.13.234.115:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
 金鹰卡通,http://125.42.150.231:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
 卡酷少儿,http://221.13.234.238:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
+电视剧,http://221.13.234.238:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
+公共,http://221.13.234.115:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
+民生,http://221.13.234.238:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+都市,http://221.13.234.115:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
+民生,http://221.13.234.115:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+公共,http://221.13.235.11:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
+都市,http://221.13.234.238:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
