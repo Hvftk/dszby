@@ -28,7 +28,6 @@ CCTV15,http://119.4.143.132:9901/tsfile/live/faacts/0015_1.m3u8?key=txiptv&playl
 广东卫视,http://119.4.143.132:9901/tsfile/live/faacts/0125_1.m3u8?key=txiptv&playlive=0&authid=0
 广西卫视,http://119.4.143.132:9901/tsfile/live/faacts/0113_1.m3u8?key=txiptv&playlive=0&authid=0
 江苏卫视,http://119.4.143.132:9901/tsfile/live/faacts/0127_1.m3u8?key=txiptv&playlive=0&authid=0
-江西卫视,http://119.4.143.132:9901/tsfile/live/faacts/0138_2.m3u8?key=txiptv&playlive=0&authid=0
 河北卫视,http://119.4.143.132:9901/tsfile/live/faacts/0117_2.m3u8?key=txiptv&playlive=0&authid=0
 河南卫视,http://119.4.143.132:9901/tsfile/live/faacts/0139_2.m3u8?key=txiptv&playlive=0&authid=0
 浙江卫视,http://119.4.143.132:9901/tsfile/live/faacts/0124_2.m3u8?key=txiptv&playlive=0&authid=0
