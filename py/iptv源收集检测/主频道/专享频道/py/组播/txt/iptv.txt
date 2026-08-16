@@ -1,4 +1,4 @@
-2026/08/16 06:35更新,#genre#
+2026/08/16 15:43更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -21678,6 +21678,8 @@ CCTV13,http://221.193.168.223:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1
 CCTV14,http://221.193.168.223:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV3,http://221.193.168.223:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV10,http://221.193.168.223:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV1,http://183.186.88.137:8899/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV12,http://183.186.88.137:8899/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 
 卫视频道,#genre#
 湖北卫视,http://1.195.131.69:9909/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -38995,6 +38997,9 @@ SCTV康巴卫视,http://124.161.172.155:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 宁夏卫视,http://183.186.89.250:8899/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0
 青海卫视,http://183.186.89.250:8899/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
 天津卫视,http://125.42.150.6:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+河南卫视,http://183.186.88.138:8899/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+四川卫视,http://183.186.88.137:8899/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
+浙江卫视,http://183.186.88.137:8899/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江频道,#genre#
 浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
@@ -51844,3 +51849,4 @@ IPTV热播剧场,http://119.129.173.176:9901/tsfile/live/1008_1.m3u8?key=txiptv&
 河北农民,http://106.115.24.55:9901/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0
 卡酷少儿,http://106.115.24.55:9901/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0
 金鹰卡通,http://125.42.150.6:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+卡酷少儿,http://221.13.234.232:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
