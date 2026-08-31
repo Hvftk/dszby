@@ -1,10 +1,11 @@
 
 天津卫视,http://123.52.109.197:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
+山西卫视,http://123.52.109.197:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0
 江西卫视,http://123.52.109.197:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
-河南卫视,http://123.52.109.197:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+河南卫视,http://123.52.110.73:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+深圳卫视,http://123.52.109.197:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
 辽宁卫视,http://123.52.109.197:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
 重庆卫视,http://123.52.110.73:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
-青海卫视,http://123.52.109.197:9901/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 浙江钱江都市,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
