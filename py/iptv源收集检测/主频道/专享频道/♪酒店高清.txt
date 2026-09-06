@@ -1,16 +1,4 @@
-CCTV2,http://221.13.234.90:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV5,http://125.125.233.230:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV7,http://221.13.234.90:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV12,http://125.125.233.230:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV14,http://125.125.233.230:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
 
-东南卫视,http://125.125.233.230:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
-云南卫视,http://125.125.233.230:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
-厦门卫视,http://125.42.150.244:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
-山西卫视,http://123.52.110.95:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0
-河南卫视,http://123.52.110.95:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
-海南卫视,http://125.125.233.230:9901/tsfile/live/0114_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北卫视,http://125.42.150.244:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 浙江钱江都市,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
@@ -84,4 +72,3 @@ CCTV14,http://125.125.233.230:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1
 龙泉公共新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
 龙游新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
 龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
-民生,http://221.13.234.90:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
