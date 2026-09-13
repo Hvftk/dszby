@@ -117,9 +117,6 @@ TVBPlus,http://50.7.234.10:8278/j2_twn/playlist.m3u8?tid=MFCF3274854132748541&ct
 八大戏剧,http://50.7.234.10:8278/badadrama/playlist.m3u8?tid=ME4E4734124647341246&ct=19225&tsum=c4e596572a79ad99675ee2137d1cc43d
 
 频道,#genre#
-优漫卡通,http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/ymkt/600/index.m3u8?msisdn=20260910180259f9a02b70080f489190566106e7aa37ff&mdspid=&spid=699067&netType=0&sid=5500260553&pid=2028597139&timestamp=20260910180259&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064703&ParentNodeID=-99&assertID=5500260553&client_ip=171.8.79.254&SecurityKey=20260910180259&promotionId=&mvid=5100186455&mcid=500020&playurlVersion=ZQ-A1-9.9.1-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=9cb6b765c6b14eca42977bb0f8f8af2a
-
-频道,#genre#
 翡翠台,http://iptv.4666888.xyz/iptv2A.php?id=34
 TVB千禧经典,http://iptv.4666888.xyz/iptv2A.php?id=22
 TVBS新闻,http://iptv.4666888.xyz/iptv2A.php?id=43
@@ -642,13 +639,8 @@ TVBS新闻,http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDE
 靖天,http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDE2OyBWMjM1MkEpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMzEuMC42Nzc4LjIwMCBNb2JpbGUgU2FmYXJpLzUzNy4zNiBWaXZvQnJvd3Nlci8yOC4wLjAuMA==&hls=aHR0cDovLzguMjE4Ljg0LjM6ODg4NS9saXZlL05sQWhnZFI0NzVfcDlwSGVLRTFHMXJJTG9WbDE4UXFlMzZqVXNpV3FZNVMyNkxRek5BLTgybzBMU2lObzEzT0dobU5qYURLVFBISkkyb1lSdy1vZEFZR2FPemsyUkV6cnJmLXpRRmRKZlo0bHlKcG1FZG81TVVaUXZlb0ltSEh0bGI2RlZMenplWTU3bWZ6THAwdEZPNlJyM0k3TDl3ZGxtcTVnNlVBZ291cVJWNmtpMzdsZU9xOGRvaFFZSldRNEFVV0QxekVycnc2enZLTmpBUnlnVEpKeE5zRXpuX2hiVVZNZDJzcUZqaW1NMkt5YVF6czZ5eEFZRnVnSExZbkdrdzloY3VwYmxiZ3ZrbjFLWHo3N3lnLm0zdTg/dT0xNzU3MTIzODE5
 
 频道,#genre#
-TVBrusque,https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
-TVBrasilOeste,https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8
-TVBrusque,https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8?checkedby:iptvcat.com
-
-频道,#genre#
 PlutoTVBritainatWar,https://jmp2.uk/plu-625e8cb585ef320007806caf.m3u8
-MTVBiggestPop,https://jmp2.uk/plu-6047fbdbbb776a0007e7f2ff.m3u8
+MTVBiggestPop,https://jmp2.uk/plu-65410176770cf1000866bf31.m3u8
 PlutoTVBackcountry,https://jmp2.uk/plu-5cabdf1437b88b26947346b2.m3u8
 PlutoTVBangBang,https://jmp2.uk/plu-663b9dc7cb3ea10008f1a0ce.m3u8
 PlutoTVBrigadeCriminelle,https://jmp2.uk/plu-684bf01df7d8b74b625b7dd1.m3u8
