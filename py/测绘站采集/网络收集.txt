@@ -1,4 +1,4 @@
-2026/09/17 12:19更新,#genre#
+2026/09/19 12:02更新,#genre#
 �影,http://php.jdshipin.com:8880/1905.php?id=1905dy
 1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
@@ -10,44 +10,47 @@ TVB星河国语,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe
 凤凰资讯,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzx
 
 港澳B组,#genre#
-AXN,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34597
-AXN,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34930
-TVB经典,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34555
-TVBE-NEWS,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34660
-TVBS,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34915
-TVBSASIA,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34561
-东森财经,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34901
-东森洋片,http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34904
-东森洋片,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34904
-华视,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34887
-靖天,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34841
-靖天卡通,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34842
-靖天映画,http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34838
-靖洋卡通,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34834
-龙华洋片,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34828
-三立iNEWS新闻,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34909
-台视,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34879
-纬来电影,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34852
-纬来日本,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34853
-中视,http://31.43.191.125:8080/vip7201770826573/415c945b71e8/34897
+AXN,http://31.43.191.125:8080/restream/restream/34597
+AXN,http://31.43.191.125:8080/restream/restream/34930
+TVB经典,http://31.43.191.125:8080/restream/restream/34555
+TVBE-NEWS,http://31.43.191.125:8080/restream/restream/34660
+TVBS,http://31.43.191.125:8080/restream/restream/34915
+TVBS-NEWS,http://31.43.191.125:8080/restream/restream/34783
+TVBSASIA,http://31.43.191.125:8080/restream/restream/34561
+东森财经,http://31.43.191.125:8080/restream/restream/34901
+华视,http://31.43.191.125:8080/restream/restream/34887
+靖天,http://31.43.191.125:8080/restream/restream/34841
+靖天卡通,http://31.43.191.125:8080/restream/restream/34842
+龙华洋片,http://31.43.191.125:8080/restream/restream/34828
+龙祥电影,http://31.43.191.125:8080/restream/restream/34825
+龙祥电影,http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34825
+三立iNEWS新闻,http://31.43.191.125:8080/restream/restream/34909
+台视,http://31.43.191.125:8080/restream/restream/34879
+纬来日本,http://31.43.191.125:8080/restream/restream/34853
+纬来育乐,http://31.43.191.125:8080/restream/restream/34849
+中视,http://31.43.191.125:8080/restream/restream/34897
 
 港澳C组,#genre#
-MTVBiggestPop,https://jmp2.uk/plu-6047fbdbbb776a0007e7f2ff.m3u8
+AdrenalinaPuraTVBrazil,https://jmp2.uk/plu-61b790b985706b00072cb797.m3u8
+ComedyCentralPlutoTVBR,https://jmp2.uk/plu-5f357e91b18f0b00073583d2.m3u8
+MTVBiggestPop,https://jmp2.uk/plu-5d14fd1a252d35decbc4080c.m3u8
+MTVBiggestPopBR,https://jmp2.uk/plu-6047fbdbbb776a0007e7f2ff.m3u8
+MTVBiggestPopCA,https://jmp2.uk/plu-65410176770cf1000866bf31.m3u8
+MTVBiggestPopLatAm,https://jmp2.uk/plu-6047fabfce6e8e00070bcc9f.m3u8
 PlutoTVBackcountry,https://jmp2.uk/plu-5cabdf1437b88b26947346b2.m3u8
 PlutoTVBangBang,https://jmp2.uk/plu-663b9dc7cb3ea10008f1a0ce.m3u8
 PlutoTVBrigadeCriminelle,https://jmp2.uk/plu-684bf01df7d8b74b625b7dd1.m3u8
 PlutoTVBritainatWar,https://jmp2.uk/plu-625e8cb585ef320007806caf.m3u8
 PlutoTVBritischeSerien,https://jmp2.uk/plu-677e5a3d7bffa6000808dbf2.m3u8
-PlutoTVBritishComedy,https://jmp2.uk/plu-638e11951177840007fdd6b2.m3u8
-PlutoTVBud&Terence,https://jmp2.uk/plu-65b915b1dc10a40008d53797.m3u8
+PlutoTVBud&TerenceGermany,https://jmp2.uk/plu-64be7398e4391c0008cdedfe.m3u8
+PlutoTVBud&TerenceSweden,https://jmp2.uk/plu-65b917720d9ab4000833f323.m3u8
+PlutoTVBud&TerenceSwedenNO,https://jmp2.uk/plu-65b916ec3af63d00084c5841.m3u8
 PlutoTVBuskis,https://jmp2.uk/plu-660d5f2a635c75000828855f.m3u8
-StoriesbyAMC,https://jmp2.uk/plu-62f2ce24f328e00007e7f55a.m3u8
 
 港澳D组,#genre#
 NOW星影,http://74.91.26.218:82/live/nowxy.m3u8
 TVBPlus,http://74.91.26.218:82/live/j2.m3u8
 公视,http://74.91.26.218:82/live/pts.m3u8
-公视台语,http://74.91.26.218:82/live/ptsty.m3u8
 华视,http://74.91.26.218:82/live/cts.m3u8
 华视教育体育文化,http://74.91.26.218:82/live/ctsjy.m3u8
 华视新闻资讯,http://74.91.26.218:82/live/ctsnews.m3u8
@@ -61,11 +64,7 @@ TVBPlus,http://74.91.26.218:82/live/j2.m3u8
 台视综合,http://74.91.26.218:82/live/ttvzh.m3u8
 天映,http://74.91.26.218:82/live/typd.m3u8
 天映经典,http://74.91.26.218:82/live/tyjd.m3u8
-小公视,http://74.91.26.218:82/live/ptsse.m3u8
 中视,http://74.91.26.218:82/live/ctv.m3u8
-中视菁采,http://74.91.26.218:82/live/ctvjc.m3u8
-中视经典,http://74.91.26.218:82/live/ctvjd.m3u8
-中视新闻,http://74.91.26.218:82/live/ctvnews.m3u8
 
 港澳E组,#genre#
 TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt
@@ -103,6 +102,14 @@ TVBPlus,http://r.jdshipin.com/ndGgS
 无线新闻,http://r.jdshipin.com/CkuBd
 
 港澳G组,#genre#
+TVB星河,https://o11.163189.xyz/stream/live/tvbxh/
+TVBPlus,https://o11.163189.xyz/stream/tvb/tvbp/
+翡翠台,http://o11.163189.xyz/stream/tvb/fct/
+翡翠台4K,https://o11.163189.xyz/stream/tvb/fct4k/
+天映,http://o11.163189.xyz/stream/live/typd/
+天映经典,http://o11.163189.xyz/stream/live/ccm/
+
+港澳H组,#genre#
 TVBPlus,http://aktv.top/AKTV/live/aktv/tvbplus/AKTV.m3u8
 TVBS新闻,http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
 TVBS,http://aktv.top/AKTV/live/aktv/tvbs/AKTV.m3u8
@@ -124,7 +131,7 @@ TVBS,http://aktv.top/AKTV/live/aktv/tvbs/AKTV.m3u8
 中天新闻,http://aktv.top/AKTV/live/aktv/null-8/AKTV.m3u8
 中天亚洲,http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
 
-港澳H组,#genre#
+港澳I组,#genre#
 TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 东森财经新闻台,https://www.youtube.com/watch?v=LbS-xQ67fos
 东森新闻台,https://www.youtube.com/live/V1p33hqPrUk?si=IyGTwsTSIL7hXDKN
@@ -140,7 +147,7 @@ TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 中天新闻2台,https://www.youtube.com/watch?v=WPfPjbOLNfE
 中天新闻YT,https://www.youtube.com/watch?v=vr3XyVCR4T0
 
-港澳I组,#genre#
+港澳J组,#genre#
 TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
 大爱一,https://7612-5516-affc-d88b.kylintv.tv/live/daai_iphone.m3u8
 凤凰卫视,https://7612-5516-affc-d88b.kylintv.tv/live/pxnaus_iphone.m3u8
@@ -148,22 +155,15 @@ TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
 凤凰卫视中文,https://7612-5516-affc-d88b.kylintv.tv/live/pxinhd_iphone.m3u8
 华视,https://7612-5516-affc-d88b.kylintv.tv/live/ctshd_iphone.m3u8
 
-港澳J组,#genre#
-华视,http://220.135.64.124:5050/of-4gtv-4gtv041/index.m3u8?proxy=true
-寰宇财经,http://220.135.64.124:5050/of-4gtv-4gtv158/index.m3u8?proxy=true
-寰宇新闻台湾,http://220.135.64.124:5050/of-4gtv-4gtv156/index.m3u8?proxy=true
-中视,http://220.135.64.124:5050/of-4gtv-4gtv040/index.m3u8?proxy=true
-中天新闻,http://220.135.64.124:5050/of-4gtv-4gtv009/index.m3u8?proxy=true
-
 港澳K组,#genre#
 龙华电影,http://cdn8.163189.xyz/163189/lhdy
 龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
-龙华卡通,http://cdn8.163189.xyz/163189/lhkt
 龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
 龙华偶像,http://cdn8.163189.xyz/163189/lhox
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
 龙华日韩,http://cdn8.163189.xyz/163189/lhrh
 龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
+龙华戏剧,http://cdn8.163189.xyz/163189/lhxj
 龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
 龙华洋片,http://cdn8.163189.xyz/163189/lhyp
 龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
