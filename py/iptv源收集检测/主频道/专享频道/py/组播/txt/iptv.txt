@@ -1,4 +1,4 @@
-2026/09/29 22:01更新,#genre#
+2026/09/30 09:18更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -22517,6 +22517,17 @@ CCTV12,http://119.129.172.94:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&
 CCTV13,http://119.129.172.94:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
 女性时尚,http://119.129.172.94:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
 女性时尚,http://119.129.173.179:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV1,http://106.115.24.70:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV3,http://106.115.24.70:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV4,http://106.115.24.70:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV10,http://106.115.24.70:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV11,http://106.115.24.70:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV14,http://106.115.24.70:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV14,http://119.125.134.221:9901/tsfile/live/0014_2.m3u8?key=txiptv&playlive=1&authid=0
+CCTV15,http://119.125.134.221:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV17,http://106.115.24.70:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTVCCTV文化精品,http://119.125.134.221:9901/tsfile/live/1041_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV12,http://119.129.173.189:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 
 卫视频道,#genre#
 湖北卫视,http://1.195.131.69:9909/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -40531,6 +40542,21 @@ SCTV康巴卫视,http://124.161.172.154:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 东南卫视,http://125.42.149.69:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
 湖北卫视,http://125.42.149.69:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南卫视,http://125.42.149.69:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+云南卫视,http://106.115.24.70:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
+大湾区卫视,http://119.125.134.221:9901/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0
+辽宁卫视,http://106.115.24.70:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+东南卫视,http://106.115.24.70:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
+河南卫视,http://106.115.24.70:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+吉林卫视,http://106.115.24.70:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0
+厦门卫视,http://119.125.134.221:9901/tsfile/live/0129_1.m3u8?key=txiptv&playlive=1&authid=0
+陕西卫视,http://106.115.24.70:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
+浙江卫视,http://106.115.24.70:9901/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&authid=0
+甘肃卫视,http://106.115.24.70:9901/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0
+湖北卫视,http://106.115.24.70:9901/tsfile/live/faacts/0132_1.m3u8?key=txiptv&playlive=1&authid=0
+河北卫视,http://106.115.24.70:9901/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0
+四川卫视,http://106.115.24.70:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
+广西卫视,http://106.115.24.70:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=1&authid=0
+江西卫视,http://106.115.24.70:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江频道,#genre#
 浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
@@ -42488,6 +42514,7 @@ SCTV康巴卫视,http://124.161.172.154:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 河南戏曲,http://106.115.24.172:9901/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
 河南戏曲,http://221.13.235.108:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
 河南戏曲,http://106.115.24.103:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
+河南戏曲,http://106.115.24.70:9901/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
 广西频道,#genre#
 广西综艺,http://36.136.38.87:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 广西都市,http://36.136.38.87:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -53945,3 +53972,21 @@ CGTN,http://119.125.134.188:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&a
 CGTN西班牙语,http://119.125.134.188:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
 广东公共,http://119.129.173.179:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 广东新闻,http://119.129.172.94:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
+魏县电视台,http://106.115.24.70:9901/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0
+河北影视,http://106.115.24.70:9901/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&authid=0
+嘉佳卡通,http://119.125.134.221:9901/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
+中国交通,http://106.115.24.70:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=1&authid=0
+CETV早期教育,http://119.125.134.221:9901/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
+河北农民,http://106.115.24.70:9901/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0
+河北都市,http://106.115.24.70:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+广平电视台,http://106.115.24.70:9901/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
+哈哈炫动,http://119.125.134.221:9901/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
+河北经济,http://106.115.24.70:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
+岭南戏曲,http://119.125.134.221:9901/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
+唐山影视,http://106.115.24.70:9901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
+广东公共,http://119.129.172.186:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+IPTV热播剧场,http://119.129.173.189:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
+广东少儿,http://119.129.172.186:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+广东体育,http://119.129.172.186:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
+嘉佳卡通,http://119.129.172.186:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
+广东新闻,http://119.129.172.186:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
