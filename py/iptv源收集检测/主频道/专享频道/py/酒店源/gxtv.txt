@@ -1,4 +1,21 @@
+CCTV4美洲,http://183.11.239.36:808/hls/77/index.m3u8
+CCTV6,http://183.11.239.36:808/hls/94/index.m3u8
+CCTV8,http://183.11.239.36:808/hls/96/index.m3u8
+CCTV9,http://183.11.239.36:808/hls/27/index.m3u8
+兵器科技,http://183.11.239.36:808/hls/21/index.m3u8
 
-南山有线,http://113.64.147.129:8081/hls/18/index.m3u8
-广东体育,http://113.64.147.129:8081/hls/1/index.m3u8
-本港台,http://113.64.147.129:8081/hls/135/index.m3u8
+东方卫视,http://183.11.239.36:808/hls/114/index.m3u8
+云南卫视,http://183.11.239.36:808/hls/52/index.m3u8
+吉林卫视,http://183.11.239.36:808/hls/10/index.m3u8
+吉林延边卫视,http://183.11.239.36:808/hls/15/index.m3u8
+山西卫视,http://183.11.239.36:808/hls/59/index.m3u8
+广东卫视,http://183.11.239.36:808/hls/80/index.m3u8
+CGTN阿拉伯语,http://183.11.239.36:808/hls/84/index.m3u8
+中国交通,http://183.11.239.36:808/hls/172/index.m3u8
+南山有线,http://113.64.147.58:8081/hls/18/index.m3u8
+广东少儿,http://183.11.239.36:808/hls/175/index.m3u8
+广东民生,http://183.11.239.36:808/hls/18/index.m3u8
+广东珠江,http://183.11.239.36:808/hls/83/index.m3u8
+汽摩,http://183.11.239.36:808/hls/66/index.m3u8
+深圳少儿,http://183.11.239.36:808/hls/157/index.m3u8
+财富天下,http://183.11.239.36:808/hls/75/index.m3u8
