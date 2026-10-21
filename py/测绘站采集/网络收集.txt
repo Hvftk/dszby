@@ -1,10 +1,10 @@
-2026/10/19 12:01更新,#genre#
+2026/10/21 12:04更新,#genre#
 �影,http://php.jdshipin.com:8880/1905.php?id=1905dy
 1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
+TVB翡翠台4K,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
 TVB星河国语,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe
-翡翠台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 翡翠台版,http://php.jdshipin.com:8880/TVOD/iptv.php?id=j1
 凤凰卫视,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzw
 凤凰资讯,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzx
@@ -13,10 +13,29 @@ TVB星河国语,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe
 AXN,http://31.43.191.125:8080/restream/restream/34597
 TVB经典,http://31.43.191.125:8080/restream/restream/34555
 TVBE-NEWS,http://31.43.191.125:8080/restream/restream/34660
+TVBSASIA,http://31.43.191.125:8080/restream/restream/34561
 凤凰中文,http://31.43.191.125:8080/restream/restream/34629
 凤凰资讯,http://31.43.191.125:8080/restream/restream/34641
 
 港澳C组,#genre#
+AdrenalinaPuraTVBrazil,https://jmp2.uk/plu-61b790b985706b00072cb797.m3u8
+BETPlutoTVBR,https://jmp2.uk/plu-5ff768b6a4c8b80008498610.m3u8
+ComedyCentralPlutoTVBR,https://jmp2.uk/plu-5f357e91b18f0b00073583d2.m3u8
+MTVBiggestPop,https://jmp2.uk/plu-5d14fd1a252d35decbc4080c.m3u8
+MTVBiggestPopBR,https://jmp2.uk/plu-6047fbdbbb776a0007e7f2ff.m3u8
+MTVBiggestPopLatAm,https://jmp2.uk/plu-6047fabfce6e8e00070bcc9f.m3u8
+MTVPlutoTVBR,https://jmp2.uk/plu-5f1212fb81e85c00077ae9ef.m3u8
+PlutoTVBangBang,https://jmp2.uk/plu-663b9dc7cb3ea10008f1a0ce.m3u8
+PlutoTVBrigadeCriminelle,https://jmp2.uk/plu-684bf01df7d8b74b625b7dd1.m3u8
+PlutoTVBritainatWar,https://jmp2.uk/plu-625e8cb585ef320007806caf.m3u8
+PlutoTVBritischeSerien,https://jmp2.uk/plu-677e5a3d7bffa6000808dbf2.m3u8
+PlutoTVBud&TerenceGermany,https://jmp2.uk/plu-64be7398e4391c0008cdedfe.m3u8
+PlutoTVBud&TerenceSweden,https://jmp2.uk/plu-65b917720d9ab4000833f323.m3u8
+PlutoTVBud&TerenceSwedenDK,https://jmp2.uk/plu-65b915b1dc10a40008d53797.m3u8
+PlutoTVBud&TerenceSwedenNO,https://jmp2.uk/plu-65b916ec3af63d00084c5841.m3u8
+PlutoTVBuskis,https://jmp2.uk/plu-660d5f2a635c75000828855f.m3u8
+
+港澳D组,#genre#
 EBC东森新闻5124小时线上直播,https://www.youtube.com/watch?v=E0zhe2gkXBs
 TVBS新闻台,https://www.youtube.com/watch?v=m_dhMSvUCIc
 TVBS新闻台24小时直播,https://www.youtube.com/watch?v=2mCSYvcfhtc
@@ -51,8 +70,9 @@ TVBS5624小时LIVE直播,https://www.youtube.com/watch?v=o_-hSMgpAzs
 中天新闻2台,https://www.youtube.com/watch?v=WPfPjbOLNfE
 中天新闻YT,https://www.youtube.com/watch?v=vr3XyVCR4T0
 
-港澳D组,#genre#
+港澳E组,#genre#
 TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt
+TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt2
 TVB星河,http://php.jdshipin.com/TVOD/iptv.php?id=xinghe
 TVB娱乐新闻,http://php.jdshipin.com/TVOD/iptv.php?id=tvbylxw
 TVBJ1源1,http://php.jdshipin.com/TVOD/iptv.php?id=j1
@@ -60,16 +80,17 @@ TVBJ1源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbj1
 TVBPlus源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbp
 TVBPlus,http://php.jdshipin.com/TVOD/iptv.php?id=j2
 翡翠台马来西亚版,http://php.jdshipin.com/TVOD/iptv.php?id=huali
+翡翠台源1,http://php.jdshipin.com/TVOD/iptv.php?id=fct3
 翡翠台源2,http://php.jdshipin.com/TVOD/iptv.php?id=fct4
 翡翠台源3,http://php.jdshipin.com/TVOD/iptv.php?id=fct
 翡翠台源4,http://php.jdshipin.com/TVOD/iptv.php?id=fct2
 凤凰香港,http://php.jdshipin.com/TVOD/iptv.php?id=fhhk
-凤凰中文,http://php.jdshipin.com/TVOD/iptv.php?id=fhzw
+凤凰中文源1,http://php.jdshipin.com/TVOD/iptv.php?id=fhzw
 凤凰资讯,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
 无线新闻,http://php.jdshipin.com/TVOD/iptv.php?id=wxxw
 无线新闻台源2,http://php.jdshipin.com/TVOD/iptv.php?id=wxxwt
 
-港澳E组,#genre#
+港澳F组,#genre#
 TVB星河,http://r.jdshipin.com/Voac4
 TVB星河,http://r.jdshipin.com/sXuuD
 TVBPlus,http://r.jdshipin.com/Nr5jq
@@ -85,16 +106,19 @@ TVBPlus,http://r.jdshipin.com/ndGgS
 凤凰资讯,http://r.jdshipin.com/0Rp07
 无线新闻,http://r.jdshipin.com/CkuBd
 
-港澳F组,#genre#
-TVB1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58589.ts
+港澳G组,#genre#
 TVB1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58594.ts
 TVBDRAMA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58591.ts
 TVBE,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58593.ts
+TVBJ1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58588.ts
+TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58590.ts
 TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59167.ts
-华视,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59155.ts
+东森财经,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59158.ts
+东森中国,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59156.ts
+三立,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59163.ts
 台视综合,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59166.ts
 
-港澳G组,#genre#
+港澳H组,#genre#
 TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
 大爱一,https://7612-5516-affc-d88b.kylintv.tv/live/daai_iphone.m3u8
 凤凰卫视,https://7612-5516-affc-d88b.kylintv.tv/live/pxnaus_iphone.m3u8
@@ -102,11 +126,10 @@ TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
 凤凰卫视中文,https://7612-5516-affc-d88b.kylintv.tv/live/pxinhd_iphone.m3u8
 华视,https://7612-5516-affc-d88b.kylintv.tv/live/ctshd_iphone.m3u8
 
-港澳H组,#genre#
+港澳I组,#genre#
 龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
-龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
-龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
 龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
+龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
 龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
 
