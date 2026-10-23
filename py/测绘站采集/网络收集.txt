@@ -1,6 +1,5 @@
-2026/10/21 12:04更新,#genre#
-�影,http://php.jdshipin.com:8880/1905.php?id=1905dy
-1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
+2026/10/23 12:06更新,#genre#
+�影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
 TVB翡翠台4K,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
@@ -23,16 +22,13 @@ BETPlutoTVBR,https://jmp2.uk/plu-5ff768b6a4c8b80008498610.m3u8
 ComedyCentralPlutoTVBR,https://jmp2.uk/plu-5f357e91b18f0b00073583d2.m3u8
 MTVBiggestPop,https://jmp2.uk/plu-5d14fd1a252d35decbc4080c.m3u8
 MTVBiggestPopBR,https://jmp2.uk/plu-6047fbdbbb776a0007e7f2ff.m3u8
+MTVBiggestPopCA,https://jmp2.uk/plu-65410176770cf1000866bf31.m3u8
 MTVBiggestPopLatAm,https://jmp2.uk/plu-6047fabfce6e8e00070bcc9f.m3u8
 MTVPlutoTVBR,https://jmp2.uk/plu-5f1212fb81e85c00077ae9ef.m3u8
 PlutoTVBangBang,https://jmp2.uk/plu-663b9dc7cb3ea10008f1a0ce.m3u8
 PlutoTVBrigadeCriminelle,https://jmp2.uk/plu-684bf01df7d8b74b625b7dd1.m3u8
 PlutoTVBritainatWar,https://jmp2.uk/plu-625e8cb585ef320007806caf.m3u8
-PlutoTVBritischeSerien,https://jmp2.uk/plu-677e5a3d7bffa6000808dbf2.m3u8
 PlutoTVBud&TerenceGermany,https://jmp2.uk/plu-64be7398e4391c0008cdedfe.m3u8
-PlutoTVBud&TerenceSweden,https://jmp2.uk/plu-65b917720d9ab4000833f323.m3u8
-PlutoTVBud&TerenceSwedenDK,https://jmp2.uk/plu-65b915b1dc10a40008d53797.m3u8
-PlutoTVBud&TerenceSwedenNO,https://jmp2.uk/plu-65b916ec3af63d00084c5841.m3u8
 PlutoTVBuskis,https://jmp2.uk/plu-660d5f2a635c75000828855f.m3u8
 
 港澳D组,#genre#
@@ -111,12 +107,10 @@ TVB1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58594.ts
 TVBDRAMA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58591.ts
 TVBE,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58593.ts
 TVBJ1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58588.ts
-TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58590.ts
 TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59167.ts
 东森财经,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59158.ts
-东森中国,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59156.ts
+华视,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59155.ts
 三立,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59163.ts
-台视综合,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59166.ts
 
 港澳H组,#genre#
 TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
@@ -127,7 +121,12 @@ TVBS,https://7612-5516-affc-d88b.kylintv.tv/live/tvbshd_iphone.m3u8
 华视,https://7612-5516-affc-d88b.kylintv.tv/live/ctshd_iphone.m3u8
 
 港澳I组,#genre#
-龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
+TVBrasilOeste,https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8
+TVBrusque,https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
+TVBrusque,https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8?checkedby:iptvcat.com
+
+港澳J组,#genre#
+龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
 龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
 龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
