@@ -1,4 +1,4 @@
-2026/10/23 08:37更新,#genre#
+2026/10/23 20:39更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -41501,6 +41501,9 @@ SCTV康巴卫视,http://124.161.172.154:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 陕西卫视,http://59.32.97.51:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南卫视,http://125.42.149.215:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
 江苏卫视,http://119.129.172.198:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+江西卫视,http://113.64.94.174:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&down=1
+河南卫视,http://113.64.94.174:9901/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&down=1
+东方卫视,http://119.129.172.198:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江频道,#genre#
 浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
@@ -55423,3 +55426,6 @@ CGTN西班牙语,http://59.32.97.51:9901/tsfile/live/1015_1.m3u8?key=txiptv&play
 都市,http://221.13.235.110:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 深圳宝安,http://113.64.94.174:9901/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&down=1
 哈哈炫动,http://59.32.97.51:9901/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
+五华台,http://113.64.94.174:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&down=1
+谍战剧场,http://113.64.94.174:9901/tsfile/live/1041_1.m3u8?key=txiptv&playlive=1&down=1
+兵团卫,http://113.64.94.174:9901/tsfile/live/1062_1.m3u8?key=txiptv&playlive=1&down=1
