@@ -263,6 +263,18 @@ NOW星影,http://74.91.26.218:82/live/nowxy.m3u8
 民视第一,http://74.91.26.218:82/live/ftvdy.m3u8
 
 频道,#genre#
+龙华经典,https://8.fast.hidns.vip/163189/lhjd
+龙华偶像,https://8.fast.hidns.vip/163189/lhox
+龙华日韩,https://8.fast.hidns.vip/163189/lhrh
+龙华洋片,https://8.fast.hidns.vip/163189/lhyp
+龙华卡通,https://8.fast.hidns.vip/163189/lhkt
+龙华偶像,http://8.fast.hidns.vip/163189/lhox
+龙华戏剧,https://8.fast.hidns.vip/163189/lhxj
+龙华经典,http://8.fast.hidns.vip/163189/lhjd
+龙华卡通,http://8.fast.hidns.vip/163189/lhkt
+龙华日韩,http://8.fast.hidns.vip/163189/lhrh
+
+频道,#genre#
 TVBChinese,http://tv-213424.ifiesta.net:80/TV-7926745948196/892281004173/219181
 TVBDramaChinese,http://tv-213424.ifiesta.net:80/TV-7926745948196/892281004173/219182
 TVBJ1Chinese,http://tv-213424.ifiesta.net:80/TV-7926745948196/892281004173/219184
@@ -289,37 +301,20 @@ TVBSASIA,http://ysift55.xyz:80/live/WJ74AC4SRKQQYR7/pahruAQRs8/1052643.ts
 
 频道,#genre#
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
-龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
 龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
-龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
 龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
-龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
 龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
-
-频道,#genre#
-凤凰资讯,http://r.jdshipin.com/0Rp07
-凤凰香港,http://r.jdshipin.com/NfC0f
-凤凰香港,http://r.jdshipin.com/yDoTN
-无线新闻,http://r.jdshipin.com/CkuBd
-TVB星河,http://r.jdshipin.com/sXuuD
-TVBPlus,http://r.jdshipin.com/ndGgS
-翡翠台,http://r.jdshipin.com/qClQf
-翡翠台,http://r.jdshipin.com/qrfbg
-翡翠台,http://r.jdshipin.com/62WM7
-翡翠台,http://r.jdshipin.com/n90gt
-翡翠台,http://r.jdshipin.com/GeWKr
-TVBPlus,http://r.jdshipin.com/Nr5jq
-TVB星河,http://r.jdshipin.com/Voac4
-凤凰中文,http://r.jdshipin.com/cCCzW
+龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
+龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
 
 频道,#genre#
 凤凰资讯,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
 凤凰香港,http://php.jdshipin.com/TVOD/iptv.php?id=fhhk
 无线新闻,http://php.jdshipin.com/TVOD/iptv.php?id=wxxw
+TVB星河,http://php.jdshipin.com/TVOD/iptv.php?id=xinghe
 TVBPlus,http://php.jdshipin.com/TVOD/iptv.php?id=j2
 TVB生活,http://php.jdshipin.com/TVOD/iptv.php?id=tvbsh
 TVB娱乐新闻,http://php.jdshipin.com/TVOD/iptv.php?id=tvbylxw
-TVB星河,http://php.jdshipin.com/TVOD/iptv.php?id=xinghe
 凤凰中文,http://php.jdshipin.com/TVOD/iptv.php?id=fhzw
 翡翠台源1,http://php.jdshipin.com/TVOD/iptv.php?id=fct3
 翡翠台源2,http://php.jdshipin.com/TVOD/iptv.php?id=fct4
@@ -341,7 +336,20 @@ TVB明珠,http://php.jdshipin.com/smt.php?id=pearl_twn
 美亚电影,http://php.jdshipin.com/TVOD/iptv.php?id=meiya
 
 频道,#genre#
-江苏,http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsguoji/600/index.m3u8?msisdn=20261027060302226a7990521c47239d302d715eae4462&mdspid=&spid=699067&netType=0&sid=5500260577&pid=2028597139&timestamp=20261027060302&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064674&ParentNodeID=-99&assertID=5500260577&client_ip=171.8.79.254&SecurityKey=20261027060302&promotionId=&mvid=5100186482&mcid=500020&playurlVersion=WX-A1-9.10.1-SNAPSHOT&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=678073af701380547040ce19057fa075
+凤凰香港,http://r.jdshipin.com/yDoTN
+无线新闻,http://r.jdshipin.com/CkuBd
+TVBPlus,http://r.jdshipin.com/ndGgS
+凤凰资讯,http://r.jdshipin.com/0Rp07
+凤凰香港,http://r.jdshipin.com/NfC0f
+翡翠台,http://r.jdshipin.com/qClQf
+翡翠台,http://r.jdshipin.com/qrfbg
+翡翠台,http://r.jdshipin.com/62WM7
+翡翠台,http://r.jdshipin.com/n90gt
+翡翠台,http://r.jdshipin.com/GeWKr
+TVBPlus,http://r.jdshipin.com/Nr5jq
+TVB星河,http://r.jdshipin.com/sXuuD
+TVB星河,http://r.jdshipin.com/Voac4
+凤凰中文,http://r.jdshipin.com/cCCzW
 
 频道,#genre#
 数位电影,http://litv.zapi.us.kg/?id=4gtv-4gtv011
