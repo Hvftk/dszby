@@ -42,8 +42,8 @@ TVB华丽台,http://php.jdshipin.com:8880/smt.php?id=Tvbjade
 天映经典,http://php.jdshipin.com:8880/smt.php?id=Celestial2
 TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
 翡翠台版,http://php.jdshipin.com:8880/TVOD/iptv.php?id=j1
-翡翠台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 天映,http://php.jdshipin.com:8880/smt.php?id=Celestial
+TVB翡翠台4K,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
 TVB千禧经典,http://php.jdshipin.com:8880/smt.php?id=Tvbclassic
 美亚电影,http://php.jdshipin.com:8880/smt.php?id=meiyamovie_twn
@@ -204,6 +204,19 @@ TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59167.ts
 TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58590.ts
 
 频道,#genre#
+TVB1,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14927.ts
+TVBDrama,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14931.ts
+TVBE,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14929.ts
+TVBJ1,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14926.ts
+TVBSASIA,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14928.ts
+东森美州,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14945.ts
+东森中国,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14941.ts
+东森卫视,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14942.ts
+东森财经,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14944.ts
+华视,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14939.ts
+台视综合,https://pia.cx/live/qtTNEdtW/vpwLyzfw/14940.ts
+
+频道,#genre#
 中天新闻YT,https://www.youtube.com/watch?v=vr3XyVCR4T0
 凤凰卫视#24小时直播间,https://www.youtube.com/watch?v=Ry--eMIjYLQ
 寰宇新闻台湾,https://www.youtube.com/watch?v=a1YWMrmwXQs
@@ -256,7 +269,6 @@ NOW星影,http://74.91.26.218:82/live/nowxy.m3u8
 小公视,http://74.91.26.218:82/live/ptsse.m3u8
 台视新闻,http://74.91.26.218:82/live/ttvnews.m3u8
 民视,http://74.91.26.218:82/live/ftv.m3u8
-民视新闻,http://74.91.26.218:82/live/ftvnews.m3u8
 中视经典,http://74.91.26.218:82/live/ctvjd.m3u8
 中视菁采,http://74.91.26.218:82/live/ctvjc.m3u8
 民视台湾,http://74.91.26.218:82/live/ftvtw.m3u8
@@ -300,12 +312,29 @@ TVBSASIA,http://ysift55.xyz:80/live/WJ74AC4SRKQQYR7/pahruAQRs8/269918.ts
 TVBSASIA,http://ysift55.xyz:80/live/WJ74AC4SRKQQYR7/pahruAQRs8/1052643.ts
 
 频道,#genre#
+龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
+龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
+龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
+龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
+龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
 龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
 龙华日韩,https://cdn8.163189.xyz/live/lhrh/stream.m3u8
-龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
-龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
-龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
-龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
+
+频道,#genre#
+凤凰资讯,http://r.jdshipin.com/0Rp07
+凤凰香港,http://r.jdshipin.com/NfC0f
+凤凰香港,http://r.jdshipin.com/yDoTN
+无线新闻,http://r.jdshipin.com/CkuBd
+翡翠台,http://r.jdshipin.com/n90gt
+TVBPlus,http://r.jdshipin.com/ndGgS
+凤凰中文,http://r.jdshipin.com/cCCzW
+翡翠台,http://r.jdshipin.com/qClQf
+翡翠台,http://r.jdshipin.com/qrfbg
+翡翠台,http://r.jdshipin.com/62WM7
+翡翠台,http://r.jdshipin.com/GeWKr
+TVBPlus,http://r.jdshipin.com/Nr5jq
+TVB星河,http://r.jdshipin.com/sXuuD
+TVB星河,http://r.jdshipin.com/Voac4
 
 频道,#genre#
 凤凰资讯,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
@@ -334,22 +363,6 @@ TVB明珠,http://php.jdshipin.com/TVOD/iptv.php?id=mzt
 TVB千禧经典,http://php.jdshipin.com/smt.php?id=Tvbclassic
 TVB明珠,http://php.jdshipin.com/smt.php?id=pearl_twn
 美亚电影,http://php.jdshipin.com/TVOD/iptv.php?id=meiya
-
-频道,#genre#
-凤凰香港,http://r.jdshipin.com/yDoTN
-无线新闻,http://r.jdshipin.com/CkuBd
-TVBPlus,http://r.jdshipin.com/ndGgS
-凤凰资讯,http://r.jdshipin.com/0Rp07
-凤凰香港,http://r.jdshipin.com/NfC0f
-翡翠台,http://r.jdshipin.com/qClQf
-翡翠台,http://r.jdshipin.com/qrfbg
-翡翠台,http://r.jdshipin.com/62WM7
-翡翠台,http://r.jdshipin.com/n90gt
-翡翠台,http://r.jdshipin.com/GeWKr
-TVBPlus,http://r.jdshipin.com/Nr5jq
-TVB星河,http://r.jdshipin.com/sXuuD
-TVB星河,http://r.jdshipin.com/Voac4
-凤凰中文,http://r.jdshipin.com/cCCzW
 
 频道,#genre#
 数位电影,http://litv.zapi.us.kg/?id=4gtv-4gtv011

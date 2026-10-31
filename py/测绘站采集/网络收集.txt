@@ -1,8 +1,10 @@
-2026/10/29 13:06更新,#genre#
-�影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
+2026/10/31 12:53更新,#genre#
+�影,http://php.jdshipin.com:8880/1905.php?id=1905dy
+1905国外电影,http://php.jdshipin.com:8880/1905.php?id=1905dy2
+TVB翡翠台1080P,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
+TVB翡翠台4K,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 TVB翡翠台（备用）,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
 TVB星河国语,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe
-翡翠台,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
 翡翠台版,http://php.jdshipin.com:8880/TVOD/iptv.php?id=j1
 凤凰卫视,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzw
 凤凰资讯,http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzx
@@ -46,6 +48,7 @@ EYE-戏剧,http://cookies.elementfx.com/chaojidianshi/chaojidianshi.php?id=eyetv
 AXN,http://31.43.191.125:8080/restream/restream/34597
 TVB经典,http://31.43.191.125:8080/restream/restream/34555
 TVBE-NEWS,http://31.43.191.125:8080/restream/restream/34660
+TVBSASIA,http://31.43.191.125:8080/restream/restream/34561
 凤凰中文,http://31.43.191.125:8080/restream/restream/34629
 凤凰资讯,http://31.43.191.125:8080/restream/restream/34641
 
@@ -94,6 +97,7 @@ TVBPlus源2,http://php.jdshipin.com/TVOD/iptv.php?id=tvbp
 TVBPlus,http://php.jdshipin.com/TVOD/iptv.php?id=j2
 翡翠台马来西亚版,http://php.jdshipin.com/TVOD/iptv.php?id=huali
 翡翠台源1,http://php.jdshipin.com/TVOD/iptv.php?id=fct3
+翡翠台源2,http://php.jdshipin.com/TVOD/iptv.php?id=fct4
 翡翠台源3,http://php.jdshipin.com/TVOD/iptv.php?id=fct
 翡翠台源4,http://php.jdshipin.com/TVOD/iptv.php?id=fct2
 凤凰香港,http://php.jdshipin.com/TVOD/iptv.php?id=fhhk
@@ -118,16 +122,13 @@ TVBPlus,http://r.jdshipin.com/ndGgS
 无线新闻,http://r.jdshipin.com/CkuBd
 
 港澳G组,#genre#
-TVB1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58589.ts
 TVB1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58594.ts
-TVBE,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58593.ts
-TVBJ1,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58588.ts
-TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58590.ts
+TVBDRAMA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58591.ts
+TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59167.ts
 东森财经,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59158.ts
 东森中国,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59156.ts
 华视,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59155.ts
 三立,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59163.ts
-台视综合,http://mtayeh.ottb.xyz/live/774710333494/659822672281/59166.ts
 
 港澳H组,#genre#
 龙华经典,http://8.fast.hidns.vip/163189/lhjd
@@ -140,11 +141,4 @@ TVBSASIA,http://mtayeh.ottb.xyz/live/774710333494/659822672281/58590.ts
 龙华日韩,https://8.fast.hidns.vip/163189/lhrh
 龙华戏剧,https://8.fast.hidns.vip/163189/lhxj
 龙华洋片,https://8.fast.hidns.vip/163189/lhyp
-
-港澳I组,#genre#
-龙华经典,https://cdn8.163189.xyz/live/lhjd/stream.m3u8
-龙华卡通,https://cdn8.163189.xyz/live/lhkt/stream.m3u8
-龙华偶像,https://cdn8.163189.xyz/live/lhox/stream.m3u8
-龙华戏剧,https://cdn8.163189.xyz/live/lhxj/stream.m3u8
-龙华洋片,https://cdn8.163189.xyz/live/lhyp/stream.m3u8
 
