@@ -1,4 +1,4 @@
-2026/11/03 23:04更新,#genre#
+2026/11/04 10:10更新,#genre#
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 央视频道,#genre#
 CCTV1,http://106.111.244.182:60001/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -23222,6 +23222,8 @@ CCTV14,http://106.115.24.204:9901/tsfile/live/faacts/1038_1.m3u8?key=txiptv&play
 CCTV17,http://106.115.24.204:9901/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
 女性时尚,http://119.129.172.138:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
 女性时尚,http://119.129.172.53:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV14,http://106.115.24.143:9901/tsfile/live/faacts/1038_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV15,http://175.0.78.19:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
 
 卫视频道,#genre#
 湖北卫视,http://1.195.131.69:9909/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -41978,6 +41980,8 @@ SCTV康巴卫视,http://124.161.172.154:9901/tsfile/live/1010_1.m3u8?key=txiptv&
 湖北卫视,http://106.115.24.204:9901/tsfile/live/faacts/0132_1.m3u8?key=txiptv&playlive=1&authid=0
 贵州卫视,http://106.115.24.204:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0
 江苏卫视,http://119.129.172.53:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+云南卫视,http://106.115.24.143:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
+辽宁卫视,http://106.115.24.204:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
 浙江频道,#genre#
 浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
@@ -56144,3 +56148,5 @@ CGTN,http://59.32.97.19:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authi
 河北少儿科教,http://106.115.24.204:9901/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
 岭南戏曲,http://59.32.97.31:9901/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
 河北经济,http://106.115.24.204:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
+CETV4,http://59.32.97.68:9901/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0
+广东珠江台,http://59.32.97.68:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
