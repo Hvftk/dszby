@@ -304197,3 +304197,8 @@ IPTV热播剧场,http://119.129.172.110:9901/tsfile/live/1008_1.m3u8?key=txiptv&
 北京卫视,http://219.145.59.166:8888/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0,0.001
 广东卫视,http://219.145.59.166:8888/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0,0.001
 安徽卫视,http://124.228.160.3:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0,0.001
+CCTV1,http://36.136.38.87:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0,0.606
+CCTV15,http://36.136.38.87:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0,0.425
+山西卫视,http://36.136.38.87:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0,0.425
+湖北卫视,http://36.136.38.87:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0,0.001
+河北卫视,http://36.136.38.87:9901/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0,0.001
